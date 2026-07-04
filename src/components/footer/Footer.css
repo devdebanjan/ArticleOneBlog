@@ -1,0 +1,195 @@
+/* ─── WRAPPER ─── */
+.custom-footer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: 'Roboto', 'Inter', -apple-system, sans-serif;
+  padding: 60px 40px 10px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* ─── TOP SECTION ─── */
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 80px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.brand-logo  {
+  width: 48px;
+  height: 48px;
+}
+
+.footer-brand h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Links List */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+
+/* Get the App */
+.footer-app h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.app-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.icon-btn {
+  background-color: #2b2b2b;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.icon-btn:hover {
+  background-color: #3f3f3f;
+}
+
+/* ─── BOTTOM SECTION ─── */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  gap: 40px;
+}
+
+.footer-copyright {
+  font-size: 13px;
+  color: #999999;
+  flex: 1;
+}
+
+.footer-legal {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legal-links {
+  font-size: 13px;
+  color: #999999;
+}
+
+.legal-links a {
+  color: #999999;
+  text-decoration: none;
+}
+
+.legal-links a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.legal-disclaimer {
+  font-size: 12px;
+  color: #666666;
+  line-height: 1.5;
+  max-width: 500px;
+}
+
+.footer-socials {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.footer-socials span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.social-icons a:hover {
+  opacity: 0.7;
+}
+
+.footer-production-hash {
+  font-size: 10px;
+  color: #333333;
+  margin-top: 40px;
+}
+
+/* ─── RESPONSIVE DESIGN ─── */
+@media (max-width: 900px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .footer-socials {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}

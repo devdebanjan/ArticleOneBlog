@@ -1,6 +1,17 @@
 /* =========================================
-   1. GLOBAL THEME VARIABLES
+   1. GLOBAL THEME VARIABLES & RESETS
 ========================================= */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden; /* Changed from clip to hidden for better mobile support */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --bg-color: #F8F9FA;      
     --text-main: #212529;     
@@ -12,6 +23,11 @@
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Lora', serif;
     --font-ui: 'Inter', sans-serif;
+    
+    /* Added missing glass variables used in editorial-container */
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: rgba(0, 0, 0, 0.05);
 }
 
 /* =========================================
@@ -74,6 +90,7 @@
 .article-header {
     text-align: center;
     margin-bottom: 60px;
+    /* background-color: #0B0E14; */
 }
 
 .category-tag {
@@ -323,6 +340,7 @@
     color: white;
     font-family: var(--font-ui);
     font-weight: 800;
+    width: 100%; /* Ensures it respects container bounds */
 }
 
 .team { font-size: 1.4rem; letter-spacing: 2px; }
@@ -441,17 +459,8 @@
 /* =========================================
    9. MOBILE & TABLET RESPONSIVENESS
 ========================================= */
-/* Stop horizontal scrolling */
-html, body {
-    overflow-x: clip; 
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 @media (max-width: 850px) {
-    /* Stack text columns and grids */
-    /* Stack the text and image vertically */
+    /* Stack text columns and grids vertically */
     .intro-wrapper {
         display: flex !important;
         flex-direction: column !important;
@@ -460,28 +469,25 @@ html, body {
     }
 
     /* --- BULLETPROOF MOBILE TROPHY LAYOUT --- */
-    /* --- BULLETPROOF MOBILE TROPHY LAYOUT --- */
     .center-overlay-trophy {
         position: relative !important; 
-        float: right !important;       /* Floats the trophy to the right edge */
-        margin: 10px 0 15px 25px !important; /* Creates a clean gap between text and image */
+        float: right !important;       
+        margin: 10px 0 15px 25px !important; 
         
         transform: translateX(0); 
         left: auto !important;
         top: auto !important;
         display: block !important;
         
-        width: 140px !important;       /* Scaled down so text has room to breathe */
-        
-        /* The levitation animation continues to play! */
+        width: 140px !important;       
         animation: levitateTrophy 4s ease-in-out infinite !important;
     }
-    /* Adjust main container for small screens */
+
+    /* Adjust main container to avoid pushing past screen edges */
     .editorial-container {
         padding: 30px 20px !important; 
         margin: 40px 15px 20px 15px !important;
-        width: auto;
-        box-sizing: border-box;
+        width: calc(100% - 30px) !important; /* Forces bounding */
     }
 
     .main-title { font-size: 2.2rem !important; }
@@ -491,19 +497,36 @@ html, body {
         display: none;
     }
 
-    /* --- BULLETPROOF MOBILE TROPHY LAYOUT --- */
-    /* Target ONLY the trophy class, leaving your "DA" logo alone! */
-    
-
     /* Ensure standard images don't break width */
     img { max-width: 100%; height: auto; }
-}
 
-/* Fix Image 3: Force all side-by-side grids to stack vertically */
+    /* Prevent scoreboards from blowing out the horizontal width */
+    .digital-scoreboard {
+        flex-wrap: wrap; /* Allows long team names to wrap safely */
+        justify-content: center;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .team {
+        font-size: 1.1rem; /* Scaled down slightly for mobile */
+    }
+
+    /* Reduce internal padding on match articles to save horizontal space */
+    .match-article p {
+        padding: 0 15px;
+    }
+    
+    .opinion-highlight {
+        padding: 30px 20px;
+    }
+
+    /* Force all side-by-side grids to stack vertically (Bracket fixed!) */
     .match-blocks, 
     .facts-grid, 
     .nation-grid {
         display: grid !important;
-        grid-template-columns: 1fr !important; /* Forces 1 single column */
-        gap: 30px !important;
-    }
+        grid-template-columns: 1fr !important; 
+        gap: 25px !important;
+    } 
+}

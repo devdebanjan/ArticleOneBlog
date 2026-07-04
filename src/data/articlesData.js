@@ -6,9 +6,23 @@ import fifa from '../Fifa Recap/fifa.png'
 
 import Neymar from '../ComeBack/Neymar.jpg'
 
+import banner from '../blog/groupof32/images/banner.jpeg'
+
 export const articlesData = [
-   {
+  {
     id: 1,
+    tag: "Round of 32",
+    title: "The Race  Round of 32",
+    excerpt: "Neymar 981 days journey || Round of 32",
+    image: banner, // <--- CHANGE THIS FROM null TO heroImage
+    date: "June 28, 2026",
+    readTime: "10 min read",
+    link: "/Fifa-knockout", 
+    isFeatured: true,      
+    isUpcoming: false      
+  },
+   {
+    id: 2,
     tag: "Round of 32",
     title: "The Race  Round of 32",
     excerpt: "Neymar 981 days journey || Round of 32",
@@ -16,11 +30,11 @@ export const articlesData = [
     date: "June 28, 2026",
     readTime: "10 min read",
     link: "/Fifa-roundof32", 
-    isFeatured: true,      
+    isFeatured: false,      
     isUpcoming: false      
   },
   {
-    id: 2,
+    id: 3,
     tag: "Fifa 2026 First week Recap",
     title: "The roolercoaseter week....",
     excerpt: "The best fifa games weekly recap, Lets deep dive intoit.....",
@@ -32,7 +46,7 @@ export const articlesData = [
     isUpcoming: false      
   },
   {
-    id: 3,
+    id: 4,
     tag: "Women's T20 World Cup 2026",
     title: "Athletic Evolution, Statistical Extremes...",
     excerpt: "From the ultimate India vs. Pakistan opener...",
@@ -45,7 +59,7 @@ export const articlesData = [
   },
   // ... rest of your data,
   {
-    id: 4,
+    id: 5,
     tag: "FIFA World Cup 2026",
     title: "My Memories: A Journey That Never Ends",
     excerpt: "The global tapestry of the 2026 FIFA World Cup: Cultural phenomenon, tactical evolution, and the 48-team era.",

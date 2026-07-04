@@ -1,0 +1,258 @@
+/* ─── GENERAL LAYOUT WRAPPER ─── */
+.bracket-wrapper {
+  display: flex;
+  background-color: #1f1f1f;
+  padding: 40px 10px; /* Reduced side padding */
+  min-height: 90vh;
+  font-family: 'Roboto', 'Inter', sans-serif;
+  overflow-x: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Inner container safely centers content and allows horizontal scrolling if it overflows */
+.bracket-inner {
+  display: flex;
+  justify-content: center; /* Centers the bracket properly within flex */
+  width: 100%; /* Stops the container from forcing a horizontal overflow */
+  gap: 15px; 
+  align-items: center;
+}
+/* Symmetrical layouts */
+.bracket-side {
+  display: flex;
+  gap: 15px; /* Drastically reduced from 40px */
+  align-items: center;
+}
+
+.bracket-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 650px;
+}
+
+/* ─── MATCH NODES ─── */
+.match-card {
+  background-color: #303030; /* Dark slate node cards */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  width: 110px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.match-card.placeholder {
+  background-color: #282828;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+/* Flags Row Adjustment */
+.flags-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.circle-flag {
+  font-size: 24px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.shield-icon {
+  font-size: 20px;
+  opacity: 0.35;
+}
+
+/* Typography styles matching widget specifications */
+.team-codes {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+  white-space: pre-wrap;
+}
+
+.match-time {
+  color: #9aa0a6;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.status-live {
+  color: #8ab4f8; /* Highlight blue for ongoing items */
+}
+
+.status-upcoming {
+  color: #9aa0a6;
+}
+
+/* ─── CENTRAL OVERLAY ELEMENTS ─── */
+.bracket-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  min-width: 160px;
+  margin: 0 20px;
+}
+
+.trophy-room {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.trophy-icon {
+  font-size: 54px;
+  opacity: 0.35;
+  filter: grayscale(100%);
+}
+
+.trophy-label {
+  color: #9aa0a6;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* Badges for Final and Bronze structures */
+.badge-label {
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: -10px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.final-badge {
+  background-color: #fde293;
+  color: #202124;
+}
+
+.bronze-badge {
+  background-color: #8ab4f8;
+  color: #202124;
+}
+
+.bronze-card {
+  margin-top: 10px;
+}
+
+
+/* ─── RESPONSIVE COMPRESSION (Shrink to fit without scrolling) ─── */
+/* ─── MOBILE RESPONSIVE (Stacking Layout) ─── */
+@media (max-width: 768px) {
+  .bracket-wrapper {
+    padding: 20px 10px;
+    /* Force the wrapper to contain everything without horizontal scrolling */
+    overflow-x: hidden; 
+    min-height: auto;
+  }
+  
+  .bracket-inner {
+    /* Stack the Left side, Center Trophy, and Right side vertically */
+    flex-direction: column; 
+    gap: 40px;
+    /* Disable the transform scale from the 1150px query to keep text readable */
+    transform: none; 
+    width: 100%;
+    min-width: 100%; 
+  }
+  
+  .bracket-side {
+    /* Stack the individual columns (Quarterfinals, Semifinals, etc.) */
+    flex-direction: column; 
+    gap: 30px;
+    width: 100%;
+  }
+  
+  .bracket-column {
+    /* Remove the fixed 650px height so the container wraps tightly */
+    height: auto; 
+    /* Flow match cards side-by-side in rows instead of a vertical column */
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .bracket-center {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  /* Optimize card sizes for touch screens */
+  .match-card {
+    width: 110px; 
+    padding: 12px 8px;
+  }
+  
+  /* Reset typography to readable mobile sizes */
+  .circle-flag {
+    font-size: 22px; 
+  }
+  
+  .team-codes {
+    font-size: 13px;
+  }
+}
+
+/* ─── LAPTOP & TABLET RESPONSIVE COMPRESSION ─── */
+/* ─── LAPTOP & TABLET RESPONSIVE COMPRESSION ─── */
+@media (max-width: 1300px) and (min-width: 769px) {
+  .bracket-wrapper {
+    /* Revert to auto. If it absolutely must scroll on a weird screen size, 
+       it will, rather than chopping off the right side. */
+    overflow-x: auto; 
+    padding: 30px 5px; /* Reduced side padding */
+  }
+  
+  .bracket-inner {
+    width: 100%;
+    gap: 8px; /* Tighter gap */
+  }
+  
+  .bracket-side {
+    gap: 8px; /* Tighter gap */
+  }
+  
+  .bracket-center {
+    margin: 0 5px;
+    min-width: 100px;
+  }
+
+  /* Shrink the cards slightly more to guarantee they fit */
+  .match-card {
+    width: 78px; 
+    padding: 6px 2px;
+  }
+
+  .circle-flag {
+    font-size: 16px; 
+  }
+  
+  .team-codes {
+    font-size: 10px;
+    letter-spacing: 0px;
+  }
+  
+  .trophy-icon {
+    font-size: 32px;
+  }
+}

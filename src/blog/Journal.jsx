@@ -38,7 +38,8 @@ export default function Journal() {
   { group: "I", teams: ["Iraq 🇮🇶"] },
   { group: "J", teams: ["Jordan 🇯🇴"] },
   { group: "K", teams: ["Uzbekistan 🇺🇿"] },
-  { group: "L", teams: ["Panama 🇵🇦"] }
+  { group: "L", teams: ["Panama 🇵🇦"] },
+  {group:"3rd Place Team", teams:["South Korea 🇰🇷", "Iran 🇮🇷", "Scotland 🏴󠁧󠁢󠁳󠁣󠁴󠁿", "Uruguay 🇺🇾"]}
 ];
 
   return (

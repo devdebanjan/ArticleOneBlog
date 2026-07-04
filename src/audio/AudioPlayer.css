@@ -1,0 +1,61 @@
+/* Removes default button styling to make it look like a clean text link */
+.minimal-listen-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Spacing between icon and text */
+  padding: 8px 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  outline: none;
+  -webkit-tap-highlight-color: transparent; /* Remove mobile tap highlight */
+}
+
+/* Replaces .headphone-icon from earlier */
+.action-icon {
+  width: 22px;
+  height: 22px;
+  color: #000000; 
+  transition: all 0.2s ease;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+/* Optional: Make the stop icon slightly smaller so it feels balanced next to text */
+.stop-icon {
+  width: 18px;
+  height: 18px;
+  margin: 0 2px;
+  color: #e74c3c; /* Red color for stop icon */
+}
+
+/* Classic blue link text matching the image */
+.listen-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #0b57d0; /* Standard Google/System link blue */
+  user-select: none; /* Prevent text selection on click */
+}
+
+/* Adds a subtle underline when hovering, just like a real article link */
+.minimal-listen-btn:hover .listen-text {
+  text-decoration: underline;
+}
+
+/* Active state for mobile touch */
+.minimal-listen-btn:active {
+  opacity: 0.7;
+}
+
+/* OPTIONAL: Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .action-icon {
+    color: #ffffff;
+  }
+  .stop-icon {
+    color: #ff6b6b; /* Lighter red for dark mode */
+  }
+  .listen-text {
+    color: #8ab4f8; /* Lighter blue for dark mode */
+  }
+}

@@ -19,7 +19,7 @@
     -45deg, 
     #f5fee0, /* Ice Blue */
     #ffffff, /* Clean White */
-    #c0fe8a, /* Soft Trophy Gold */
+    #fafaf4, /* Soft Trophy Gold */
     #bebafd  /* Bright Sky Blue */
   );
   
@@ -42,10 +42,10 @@
   /* Deep, intimidating stadium lighting */
   --mesh-bg: linear-gradient(
     -45deg, 
-    #020617, /* Pitch Black */
-    #1e3a8a, /* Deep Sapphire Blue */
-    #0f172a, /* Midnight Blue */
-    #b45309  /* Deep Amber Gold */
+    #000000, /* Pitch Black */
+    #000103, /* Deep Sapphire Blue */
+    #000104, /* Midnight Blue */
+    #000000  /* Deep Amber Gold */
   );
   
   /* Dark sleek glass */
