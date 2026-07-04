@@ -154,3 +154,39 @@
 .widget-stat-text-row:last-child {
   margin-bottom: 5px;
 }
+
+@media (max-width: 768px) {
+  .widget-scoreboard {
+    gap: 8px; /* Brings elements closer together on mobile */
+  }
+
+  .widget-team {
+    gap: 6px; /* Brings the flag and team name closer */
+  }
+  
+  /* This is the magic part that fixes the overflow */
+  .widget-team-name { 
+    font-size: 14px; 
+    max-width: 70px; /* Restricts how wide the name can stretch */
+    white-space: nowrap; /* Stops text from breaking to a new line */
+    overflow: hidden; /* Hides the overflowing text */
+    text-overflow: ellipsis; /* Adds the "..." at the end (e.g. Ecuado...) */
+  }
+  
+  .widget-score { 
+    font-size: 28px; 
+  }
+  
+  .widget-flag { 
+    font-size: 22px; 
+  }
+  
+  .widget-score-box { 
+    min-width: 60px; /* Ensures the middle score doesn't get crushed */
+  }
+
+  /* Optional Pro-Tip: Hide the small grey FIFA rank badge on mobile to save even more space! */
+  .widget-badge {
+    display: none; 
+  }
+}
