@@ -32,13 +32,18 @@ export default function LikeCount({ articleId }) {
     }, [articleId, storageKey]);
 
     const toggleLike = async () => {
-        if (isProcessing) return;
+        // Prevent clicking if missing ID or already processing
+        if (isProcessing || !articleId) {
+            console.error("Missing articleId! Check the parent component.");
+            return;
+        }
+        
         setIsProcessing(true);
 
         const newHasLiked = !hasLiked; 
         const newLikesCount = newHasLiked ? likes + 1 : Math.max(0, likes - 1); 
 
-        // Optimistic UI Update
+        // Optimistic UI Update (Instant change for the user)
         setLikes(newLikesCount);
         setHasLiked(newHasLiked);
 
@@ -48,32 +53,18 @@ export default function LikeCount({ articleId }) {
             localStorage.removeItem(storageKey);
         }
 
-        // 1. FIX: Changed select('id') to select('article_id') because 'id' doesn't exist in your table
-        const { data: existingRow } = await supabase
+        // The Magic Fix: UPSERT automatically inserts if new, or updates if exists
+        const { error: dbError } = await supabase
             .from('knock_out_like')
-            .select('article_id')
-            .eq('article_id', articleId)
-            .maybeSingle();
-        
-        let dbError;
-    
-        if (existingRow) {
-            const { error } = await supabase
-                .from('knock_out_like')
-                // 2. FIX: Changed 'likes_count' to 'knock_like_count' to match your database exactly
-                .update({ knock_like_count: newLikesCount })
-                .eq('article_id', articleId);
-            dbError = error;
-        } else {
-            const { error } = await supabase
-                .from('knock_out_like')
-                // 3. FIX: Changed 'likes_count' to 'knock_like_count' here as well
-                .insert([{ article_id: articleId, knock_like_count: newLikesCount }]);
-            dbError = error;
-        }
+            .upsert(
+                { article_id: articleId, knock_like_count: newLikesCount },
+                { onConflict: 'article_id' } // Tells Supabase what column to check for duplicates
+            );
     
         if (dbError) {
-            console.error('Error saving likes to database:', dbError);
+            console.error('🔥 Supabase Error:', dbError.message);
+            console.error('Full Error Details:', dbError);
+            
             // Revert state back if database write fails
             setHasLiked(!newHasLiked);
             setLikes(likes);
