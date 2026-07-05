@@ -18,13 +18,13 @@ export default function LikeCount({ articleId }) {
             const { data, error } = await supabase
                 .from('knock_out_like')
                 .select('knock_like_count')
-                .eq('article_id', articleId) // 1. Fixed typo: 'article_Id' changed to lowercase 'article_id'
+                .eq('article_id', articleId)
                 .maybeSingle();
 
             if (error) {
                 console.error('Error fetching likes:', error);
             } else if (data) {
-                setLikes(data.knock_like_count); // 2. Fixed typos: 'setLiked' changed to 'setLikes' & 'like_Count' changed to 'likes_count'
+                setLikes(data.knock_like_count); 
             }
         };
         
@@ -38,7 +38,7 @@ export default function LikeCount({ articleId }) {
         const newHasLiked = !hasLiked; 
         const newLikesCount = newHasLiked ? likes + 1 : Math.max(0, likes - 1); 
 
-        // 3. Optimistic UI Update: update state instantly so the user sees the change immediately!
+        // Optimistic UI Update
         setLikes(newLikesCount);
         setHasLiked(newHasLiked);
 
@@ -48,9 +48,10 @@ export default function LikeCount({ articleId }) {
             localStorage.removeItem(storageKey);
         }
 
+        // 1. FIX: Changed select('id') to select('article_id') because 'id' doesn't exist in your table
         const { data: existingRow } = await supabase
             .from('knock_out_like')
-            .select('id')
+            .select('article_id')
             .eq('article_id', articleId)
             .maybeSingle();
         
@@ -59,13 +60,15 @@ export default function LikeCount({ articleId }) {
         if (existingRow) {
             const { error } = await supabase
                 .from('knock_out_like')
-                .update({ likes_count: newLikesCount })
+                // 2. FIX: Changed 'likes_count' to 'knock_like_count' to match your database exactly
+                .update({ knock_like_count: newLikesCount })
                 .eq('article_id', articleId);
             dbError = error;
         } else {
             const { error } = await supabase
                 .from('knock_out_like')
-                .insert([{ article_id: articleId, likes_count: newLikesCount }]);
+                // 3. FIX: Changed 'likes_count' to 'knock_like_count' here as well
+                .insert([{ article_id: articleId, knock_like_count: newLikesCount }]);
             dbError = error;
         }
     
