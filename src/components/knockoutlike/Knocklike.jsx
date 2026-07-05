@@ -24,7 +24,7 @@ export default function LikeCount({ articleId }) {
             if (error) {
                 console.error('Error fetching likes:', error);
             } else if (data) {
-                setLikes(data.likes_count); // 2. Fixed typos: 'setLiked' changed to 'setLikes' & 'like_Count' changed to 'likes_count'
+                setLikes(data.knock_like_count); // 2. Fixed typos: 'setLiked' changed to 'setLikes' & 'like_Count' changed to 'likes_count'
             }
         };
         
