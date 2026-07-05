@@ -157,35 +157,39 @@
 
 @media (max-width: 768px) {
   .widget-scoreboard {
-    gap: 8px; /* Brings elements closer together on mobile */
+    gap: 6px; 
+    width: 100%;
   }
 
+  /* ── THE FLEXBOX TRICK ── */
   .widget-team {
-    gap: 6px; /* Brings the flag and team name closer */
+    flex: 1;          /* Tells the left and right teams to share space equally */
+    min-width: 0;     /* CRITICAL: Allows the container to shrink below the text size */
+    gap: 6px;
   }
   
-  /* This is the magic part that fixes the overflow */
   .widget-team-name { 
-    font-size: 14px; 
-    max-width: 70px; /* Restricts how wide the name can stretch */
-    white-space: nowrap; /* Stops text from breaking to a new line */
-    overflow: hidden; /* Hides the overflowing text */
-    text-overflow: ellipsis; /* Adds the "..." at the end (e.g. Ecuado...) */
+    font-size: 13px;  /* Slightly smaller to accommodate zoomed-in phones */
+    width: 100%;      /* Takes up whatever space flexbox gives it */
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
   }
   
   .widget-score { 
-    font-size: 28px; 
+    font-size: 26px; 
   }
   
   .widget-flag { 
-    font-size: 22px; 
+    font-size: 20px; 
+    flex-shrink: 0;   /* Prevents the flag from squishing into an oval */
   }
   
   .widget-score-box { 
-    min-width: 60px; /* Ensures the middle score doesn't get crushed */
+    flex-shrink: 0;   /* Protects the center score from being crushed */
+    min-width: 55px;  
   }
 
-  /* Optional Pro-Tip: Hide the small grey FIFA rank badge on mobile to save even more space! */
   .widget-badge {
     display: none; 
   }

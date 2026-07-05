@@ -157,42 +157,59 @@
 /* ─── RESPONSIVE COMPRESSION (Shrink to fit without scrolling) ─── */
 /* ─── MOBILE RESPONSIVE (Stacking Layout) ─── */
 @media (max-width: 768px) {
-  .widget-scoreboard {
-    gap: 6px; 
+  .bracket-wrapper {
+    padding: 20px 10px;
+    /* Force the wrapper to contain everything without horizontal scrolling */
+    overflow-x: hidden; 
+    min-height: auto;
+  }
+  
+  .bracket-inner {
+    /* Stack the Left side, Center Trophy, and Right side vertically */
+    flex-direction: column; 
+    gap: 40px;
+    /* Disable the transform scale from the 1150px query to keep text readable */
+    transform: none; 
+    width: 100%;
+    min-width: 100%; 
+  }
+  
+  .bracket-side {
+    /* Stack the individual columns (Quarterfinals, Semifinals, etc.) */
+    flex-direction: column; 
+    gap: 30px;
+    width: 100%;
+  }
+  
+  .bracket-column {
+    /* Remove the fixed 650px height so the container wraps tightly */
+    height: auto; 
+    /* Flow match cards side-by-side in rows instead of a vertical column */
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 15px;
     width: 100%;
   }
 
-  /* ── THE FLEXBOX TRICK ── */
-  .widget-team {
-    flex: 1;          /* Tells the left and right teams to share space equally */
-    min-width: 0;     /* CRITICAL: Allows the container to shrink below the text size */
-    gap: 6px;
-  }
-  
-  .widget-team-name { 
-    font-size: 13px;  /* Slightly smaller to accommodate zoomed-in phones */
-    width: 100%;      /* Takes up whatever space flexbox gives it */
-    white-space: nowrap; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-  }
-  
-  .widget-score { 
-    font-size: 26px; 
-  }
-  
-  .widget-flag { 
-    font-size: 20px; 
-    flex-shrink: 0;   /* Prevents the flag from squishing into an oval */
-  }
-  
-  .widget-score-box { 
-    flex-shrink: 0;   /* Protects the center score from being crushed */
-    min-width: 55px;  
+  .bracket-center {
+    margin: 10px 0;
+    width: 100%;
   }
 
-  .widget-badge {
-    display: none; 
+  /* Optimize card sizes for touch screens */
+  .match-card {
+    width: 110px; 
+    padding: 12px 8px;
+  }
+  
+  /* Reset typography to readable mobile sizes */
+  .circle-flag {
+    font-size: 22px; 
+  }
+  
+  .team-codes {
+    font-size: 13px;
   }
 }
 
