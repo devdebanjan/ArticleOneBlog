@@ -5,7 +5,7 @@ import banner from './images/banner.jpeg';
 import Fixture from './TournamentTree.jsx';
 
 import Audio from '../../audio/AudioPlayer.jsx'
-import LikeButton from '../../components/JournallikeComment/JournalLike.jsx';
+import LikeButton from '../../components/knockoutlike/Knocklike.jsx';
 
 export default function Blg() {
   const matchDetails = {
@@ -49,7 +49,7 @@ export default function Blg() {
 
 <div className="article-actions">
     <Audio />
-    <LikeButton articleId="journal-neymar-return" />
+    <LikeButton articleId="knock-like" />
 </div>
         </header>
 
