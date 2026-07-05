@@ -15,11 +15,9 @@ const Navbar = ({ theme, setTheme }) => {
             <div className="nav-container">
                 {/* Left Side: Navigation Links */}
                 <div className="brand-logo">
-                    <img 
-                      src={logo} 
-                      alt="Article One Logo" 
-                      style={{ height: '68px', width: 'auto' }} // Adjust size as needed
-                    />
+                    <h2 
+                    style={{color:" #03eb03"}}
+                    >ArticleONE</h2>
                   </div>
                 <ul className="nav-links">
                     <li className="navitem"><Link to="/">Home</Link></li>

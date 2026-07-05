@@ -11,11 +11,14 @@ export default function Footer() {
           
 <div className="footer-brand">
   <div className="brand-logo">
-    <img 
+    {/* <img 
       src={logo} 
       alt="Article One Logo" 
       style={{ height: '100px', width: 'auto' }} // Adjust size as needed
-    />
+    /> */}
+    <h2 
+    style={{color:" #03eb03"}}
+    >ArticleONE</h2>
   </div>
   
 </div>

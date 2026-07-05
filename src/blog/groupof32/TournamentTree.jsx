@@ -16,7 +16,7 @@ export default function SymmetricBracket() {
                 <span className="circle-flag">🇫🇷</span>
               </div>
               <div className="team-codes">PAR  FRA</div>
-              <div className="match-time status-upcoming">Tomorrow</div>
+              <div className="match-time status-upcoming">Score 0-1</div>
             </div>
 
             <div className="match-card">
@@ -25,7 +25,7 @@ export default function SymmetricBracket() {
                 <span className="circle-flag">🇲🇦</span>
               </div>
               <div className="team-codes">CAN  MAR</div>
-              <div className="match-time status-live">Today</div>
+              <div className="match-time status-live">Score 0-3</div>
             </div>
 
             <div className="match-card">
@@ -34,7 +34,7 @@ export default function SymmetricBracket() {
                 <span className="circle-flag">🇪🇸</span>
               </div>
               <div className="team-codes">POR  ESP</div>
-              <div className="match-time">Jul 6</div>
+              <div className="match-time">Jul 7</div>
             </div>
 
             <div className="match-card">
@@ -51,10 +51,10 @@ export default function SymmetricBracket() {
           <div className="bracket-column qf">
             <div className="match-card placeholder">
               <div className="flags-row">
-                <span className="shield-icon">🛡️</span>
-                <span className="shield-icon">🛡️</span>
+                <span className="shield-icon">FRA🇫🇷 VS MAR🇲🇦</span>
+                <span className="shield-icon"></span>
               </div>
-              <div className="team-codes">TBD  TBD</div>
+              <div className="team-codes"></div>
               <div className="match-time">Jul 9</div>
             </div>
 
@@ -152,7 +152,7 @@ export default function SymmetricBracket() {
                 <span className="circle-flag">🇳🇴</span>
               </div>
               <div className="team-codes">BRA  NOR</div>
-              <div className="match-time status-upcoming">Tomorrow</div>
+              <div className="match-time status-upcoming">Tomorrow|1:30am</div>
             </div>
 
             <div className="match-card">
@@ -161,7 +161,7 @@ export default function SymmetricBracket() {
                 <span className="circle-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
               </div>
               <div className="team-codes">MEX  ENG</div>
-              <div className="match-time">Jul 6</div>
+              <div className="match-time">Tommorow</div>
             </div>
 
             <div className="match-card">
