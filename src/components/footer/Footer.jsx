@@ -16,9 +16,28 @@ export default function Footer() {
       alt="Article One Logo" 
       style={{ height: '100px', width: 'auto' }} // Adjust size as needed
     /> */}
-    <h2 
-    style={{color:" #03eb03"}}
-    >ArticleONE</h2>
+    <div 
+  style={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: '80px'
+  }}
+>
+  <h2 
+    style={{
+      fontFamily: 'var(--font-heading, "Playfair Display", serif)',
+      fontSize: '32px',
+      fontWeight: 900,
+      margin: 0,
+      letterSpacing: '-1px',
+      color: '#03eb03', /* Your signature green */
+      cursor: 'pointer'
+    }}
+  >
+    ArticleONE
+  </h2>
+</div>
   </div>
   
 </div>

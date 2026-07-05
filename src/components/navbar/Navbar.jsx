@@ -14,11 +14,28 @@ const Navbar = ({ theme, setTheme }) => {
         <nav className={`navbar ${theme}`}>
             <div className="nav-container">
                 {/* Left Side: Navigation Links */}
-                <div className="brand-logo">
-                    <h2 
-                    style={{color:" #03eb03"}}
-                    >ArticleONE</h2>
-                  </div>
+                <div 
+  style={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: '20px'
+  }}
+>
+  <h2 
+    style={{
+      fontFamily: 'var(--font-heading, "Playfair Display", serif)',
+      fontSize: '32px',
+      fontWeight: 900,
+      margin: 0,
+      letterSpacing: '-1px',
+      color: '#03eb03', /* Your signature green */
+      cursor: 'pointer'
+    }}
+  >
+    ArticleONE
+  </h2>
+</div>
                 <ul className="nav-links">
                     <li className="navitem"><Link to="/">Home</Link></li>
                     <li className="navitem"><Link to="/Articales">Articles</Link></li>
