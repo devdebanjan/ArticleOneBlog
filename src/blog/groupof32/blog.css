@@ -428,3 +428,19 @@ h1, h2, h3, h4,
         object-position: center 30%;
     }
 }
+
+/* =========================================
+   12. SEAMLESS DARK MODE OVERRIDES
+========================================= */
+/* Removes the card background, border, and shadow in Dark Mode */
+.dark .editorial-container,
+body.dark .editorial-container {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Optional: If you want the whole screen to perfectly match the deep slate color instead of pure black */
+.dark, body.dark {
+    background-color: #0B0E14 !important; 
+}

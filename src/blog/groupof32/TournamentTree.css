@@ -1,258 +1,217 @@
-/* ─── GENERAL LAYOUT WRAPPER ─── */
-.bracket-wrapper {
-  display: flex;
-  background-color: #1f1f1f;
-  padding: 40px 10px; /* Reduced side padding */
-  min-height: 90vh;
-  font-family: 'Roboto', 'Inter', sans-serif;
-  overflow-x: auto;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Inner container safely centers content and allows horizontal scrolling if it overflows */
-.bracket-inner {
-  display: flex;
-  justify-content: center; /* Centers the bracket properly within flex */
-  width: 100%; /* Stops the container from forcing a horizontal overflow */
-  gap: 15px; 
-  align-items: center;
-}
-/* Symmetrical layouts */
-.bracket-side {
-  display: flex;
-  gap: 15px; /* Drastically reduced from 40px */
-  align-items: center;
-}
-
-.bracket-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 650px;
-}
-
-/* ─── MATCH NODES ─── */
-.match-card {
-  background-color: #303030; /* Dark slate node cards */
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  width: 110px;
-  padding: 12px 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.match-card.placeholder {
-  background-color: #282828;
-  border: 1px dashed rgba(255, 255, 255, 0.15);
-}
-
-/* Flags Row Adjustment */
-.flags-row {
+/* ─── WRAPPER ─── */
+.v-bracket-wrapper {
   display: flex;
   justify-content: center;
-  gap: 6px;
-  margin-bottom: 8px;
+  background-color: #09090b; /* Deep black background */
+  padding: 60px 20px;
+  font-family: 'Inter', sans-serif;
+  overflow-x: auto;
+  min-height: 100vh;
 }
 
-.circle-flag {
-  font-size: 24px;
-  line-height: 1;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+/* ─── TREE STRUCTURE MAGIC ─── */
+.v-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.shield-icon {
+.v-pair {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.v-branch-side {
+  flex: 1; /* Ensures perfect 50/50 division for the lines */
+  display: flex;
+  justify-content: center;
+  padding: 0 15px; /* Creates the gap between cards */
+}
+
+/* Draws the horizontal connecting line */
+.v-pair::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 25%;  /* Starts exactly at the center of the left branch */
+  width: 50%; /* Ends exactly at the center of the right branch */
+  height: 25px;
+  border-bottom: 2px solid #27272a;
+  border-left: 2px solid #27272a;
+  border-right: 2px solid #27272a;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  z-index: 0;
+}
+
+/* Draws the vertical line dropping down to the winner */
+.v-child {
+  margin-top: 50px; /* Space for the 25px horizontal line + 25px drop */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.v-child::before {
+  content: '';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 25px;
+  background-color: #27272a;
+}
+
+/* ─── MATCH CARDS ─── */
+.v-match-card {
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 10px 14px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.v-match-card.upcoming {
+  background-color: #1f2229;
+}
+
+.v-match-card.third-place {
+  margin-left: 20px;
+  border: 1px dashed #3f3f46; /* Matches the lower-stakes 3rd place look */
+}
+
+.v-flags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.v-flag {
   font-size: 20px;
-  opacity: 0.35;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
 }
 
-/* Typography styles matching widget specifications */
-.team-codes {
-  color: #ffffff;
+.v-teams {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: #d4d4d8;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.8px;
   margin-bottom: 4px;
-  white-space: pre-wrap;
 }
 
-.match-time {
-  color: #9aa0a6;
-  font-size: 11px;
+.v-score {
+  color: #a1a1aa;
+  font-size: 14px;
+  font-weight: 600;
+  background: #27272a;
+  padding: 2px 10px;
+  border-radius: 6px;
+  width: 100%;
+  text-align: center;
+}
+
+.v-bottom-text {
+  color: #71717a;
+  font-size: 10px;
+  margin-top: 6px;
   font-weight: 500;
 }
 
-.status-live {
-  color: #8ab4f8; /* Highlight blue for ongoing items */
-}
-
-.status-upcoming {
-  color: #9aa0a6;
-}
-
-/* ─── CENTRAL OVERLAY ELEMENTS ─── */
-.bracket-center {
+/* ─── FINAL ROW EXTRAS ─── */
+.v-final-row {
   display: flex;
-  flex-direction: column;
+  gap: 20px;
   align-items: center;
-  gap: 24px;
-  min-width: 160px;
-  margin: 0 20px;
 }
 
-.trophy-room {
+.v-trophy-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 6px;
-  margin-bottom: 10px;
+  justify-content: center;
+  margin-right: 15px;
 }
 
-.trophy-icon {
-  font-size: 54px;
-  opacity: 0.35;
-  filter: grayscale(100%);
+.v-trophy {
+  font-size: 42px;
 }
 
-.trophy-label {
-  color: #9aa0a6;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+/* Remove vertical line if a child specifically disables it */
+.no-line::before {
+  display: none;
 }
 
-/* Badges for Final and Bronze structures */
-.badge-label {
-  font-size: 9px;
-  font-weight: 800;
-  padding: 2px 8px;
-  border-radius: 4px;
+/* ════════ REVERSE TREE MAGIC (BOTTOM HALF) ════════ */
+
+/* The horizontal split line that connects upwards */
+.v-reverse-pair {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-top: 50px; /* Space for the bracket lines above it */
+}
+
+.v-reverse-pair::before {
+  content: '';
   position: absolute;
-  bottom: -10px;
-  letter-spacing: 0.5px;
-  white-space: nowrap;
+  top: -25px; /* Draws the line UP instead of down */
+  left: 25%;
+  width: 50%;
+  height: 25px;
+  border-top: 2px solid #27272a;
+  border-left: 2px solid #27272a;
+  border-right: 2px solid #27272a;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  z-index: 0;
 }
 
-.final-badge {
-  background-color: #fde293;
-  color: #202124;
+/* The vertical stem dropping down into the node */
+.v-reverse-child {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 
-.bronze-badge {
-  background-color: #8ab4f8;
-  color: #202124;
+.v-reverse-child::after {
+  content: '';
+  position: absolute;
+  bottom: -25px; /* Draws the stem down into the bracket below */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 25px;
+  background-color: #27272a;
 }
 
-.bronze-card {
-  margin-top: 10px;
+/* ════════ FINALS ROW CONNECTION ════════ */
+
+.v-final-row {
+  margin-bottom: 50px; /* Space below the trophy row */
 }
 
-
-/* ─── RESPONSIVE COMPRESSION (Shrink to fit without scrolling) ─── */
-/* ─── MOBILE RESPONSIVE (Stacking Layout) ─── */
-@media (max-width: 768px) {
-  .bracket-wrapper {
-    padding: 20px 10px;
-    /* Force the wrapper to contain everything without horizontal scrolling */
-    overflow-x: hidden; 
-    min-height: auto;
-  }
-  
-  .bracket-inner {
-    /* Stack the Left side, Center Trophy, and Right side vertically */
-    flex-direction: column; 
-    gap: 40px;
-    /* Disable the transform scale from the 1150px query to keep text readable */
-    transform: none; 
-    width: 100%;
-    min-width: 100%; 
-  }
-  
-  .bracket-side {
-    /* Stack the individual columns (Quarterfinals, Semifinals, etc.) */
-    flex-direction: column; 
-    gap: 30px;
-    width: 100%;
-  }
-  
-  .bracket-column {
-    /* Remove the fixed 650px height so the container wraps tightly */
-    height: auto; 
-    /* Flow match cards side-by-side in rows instead of a vertical column */
-    flex-direction: row; 
-    flex-wrap: wrap; 
-    justify-content: center;
-    gap: 15px;
-    width: 100%;
-  }
-
-  .bracket-center {
-    margin: 10px 0;
-    width: 100%;
-  }
-
-  /* Optimize card sizes for touch screens */
-  .match-card {
-    width: 110px; 
-    padding: 12px 8px;
-  }
-  
-  /* Reset typography to readable mobile sizes */
-  .circle-flag {
-    font-size: 22px; 
-  }
-  
-  .team-codes {
-    font-size: 13px;
-  }
-}
-
-/* ─── LAPTOP & TABLET RESPONSIVE COMPRESSION ─── */
-/* ─── LAPTOP & TABLET RESPONSIVE COMPRESSION ─── */
-@media (max-width: 1300px) and (min-width: 769px) {
-  .bracket-wrapper {
-    /* Revert to auto. If it absolutely must scroll on a weird screen size, 
-       it will, rather than chopping off the right side. */
-    overflow-x: auto; 
-    padding: 30px 5px; /* Reduced side padding */
-  }
-  
-  .bracket-inner {
-    width: 100%;
-    gap: 8px; /* Tighter gap */
-  }
-  
-  .bracket-side {
-    gap: 8px; /* Tighter gap */
-  }
-  
-  .bracket-center {
-    margin: 0 5px;
-    min-width: 100px;
-  }
-
-  /* Shrink the cards slightly more to guarantee they fit */
-  .match-card {
-    width: 78px; 
-    padding: 6px 2px;
-  }
-
-  .circle-flag {
-    font-size: 16px; 
-  }
-  
-  .team-codes {
-    font-size: 10px;
-    letter-spacing: 0px;
-  }
-  
-  .trophy-icon {
-    font-size: 32px;
-  }
+/* Connects the trophy row down to the W99 vs W10 node */
+.v-final-row::after {
+  content: '';
+  position: absolute;
+  bottom: -50px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 50px;
+  background-color: #27272a;
+  z-index: 0;
 }

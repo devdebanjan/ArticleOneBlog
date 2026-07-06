@@ -1,187 +1,130 @@
 import React from 'react';
 import './TournamentTree.css';
 
-export default function SymmetricBracket() {
+const MatchCard = ({ team1, team2, flag1, flag2, score, bottomText, customClass = "" }) => (
+  <div className={`v-match-card ${customClass}`}>
+    <div className="v-flags">
+      <div className="v-flag">{flag1}</div>
+      <div className="v-flag">{flag2}</div>
+    </div>
+    <div className="v-teams">
+      <span>{team1}</span>
+      <span>{team2}</span>
+    </div>
+    <div className="v-score">{score}</div>
+    {bottomText && <div className="v-bottom-text">{bottomText}</div>}
+  </div>
+);
+
+export default function VerticalBracket() {
   return (
-    <div className="bracket-wrapper">
-      <div className="bracket-inner">
+    <div className="v-bracket-wrapper fade-in">
+      
+      <div className="v-branch">
         
-        {/* ─── LEFT SIDE BRACKET ─── */}
-        <div className="bracket-side">
-          {/* Round of 16 (Left Outermost) */}
-          <div className="bracket-column r16">
-            <div className="match-card">
-              <div className="flags-row">
-                <span className="circle-flag">🇵🇾</span>
-                <span className="circle-flag">🇫🇷</span>
+        {/* ════════ TOP HALF (Normal Tree) ════════ */}
+        <div className="v-pair">
+          
+          {/* Top Left */}
+          <div className="v-branch-side">
+            <div className="v-branch">
+              <div className="v-pair">
+                <div className="v-branch-side">
+                  <MatchCard team1="PAR" team2="FRA" flag1="🇵🇾" flag2="🇫🇷" score="0 : 1" />
+                </div>
+                <div className="v-branch-side">
+                  <MatchCard team1="CAN" team2="MAR" flag1="🇨🇦" flag2="🇲🇦" score="0 : 3" />
+                </div>
               </div>
-              <div className="team-codes">PAR  FRA</div>
-              <div className="match-time status-upcoming">Score 0-1</div>
-            </div>
-
-            <div className="match-card">
-              <div className="flags-row">
-                <span className="circle-flag">🇨🇦</span>
-                <span className="circle-flag">🇲🇦</span>
+              <div className="v-child">
+                <MatchCard team1="FRA" team2="MAR" flag1="🇫🇷" flag2="🇲🇦" score="10 Jul" />
               </div>
-              <div className="team-codes">CAN  MAR</div>
-              <div className="match-time status-live">Score 0-3</div>
-            </div>
-
-            <div className="match-card">
-              <div className="flags-row">
-                <span className="circle-flag">🇵🇹</span>
-                <span className="circle-flag">🇪🇸</span>
-              </div>
-              <div className="team-codes">POR  ESP</div>
-              <div className="match-time">Jul 7</div>
-            </div>
-
-            <div className="match-card">
-              <div className="flags-row">
-                <span className="circle-flag">🇺🇸</span>
-                <span className="circle-flag">🇧🇪</span>
-              </div>
-              <div className="team-codes">USA  BEL</div>
-              <div className="match-time">Jul 7</div>
             </div>
           </div>
 
-          {/* Quarterfinals (Left Middle) */}
-          <div className="bracket-column qf">
-            <div className="match-card placeholder">
-              <div className="flags-row">
-                <span className="shield-icon">FRA🇫🇷 VS MAR🇲🇦</span>
-                <span className="shield-icon"></span>
+          {/* Top Right */}
+          <div className="v-branch-side">
+            <div className="v-branch">
+              <div className="v-pair">
+                <div className="v-branch-side">
+                  <MatchCard team1="POR" team2="ESP" flag1="🇵🇹" flag2="🇪🇸" score="7 Jul" />
+                </div>
+                <div className="v-branch-side">
+                  <MatchCard team1="USA" team2="BEL" flag1="🇺🇸" flag2="🇧🇪" score="7 Jul" />
+                </div>
               </div>
-              <div className="team-codes"></div>
-              <div className="match-time">Jul 9</div>
-            </div>
-
-            <div className="match-card placeholder">
-              <div className="flags-row">
-                <span className="shield-icon">🛡️</span>
-                <span className="shield-icon">🛡️</span>
+              <div className="v-child">
+                <MatchCard team1="W93" team2="W94" flag1="🛡️" flag2="🛡️" score="11 Jul" customClass="upcoming" />
               </div>
-              <div className="team-codes">TBD  TBD</div>
-              <div className="match-time">Jul 10</div>
-            </div>
-          </div>
-
-          {/* Semifinals (Left Inner) */}
-          <div className="bracket-column sf">
-            <div className="match-card placeholder">
-              <div className="flags-row">
-                <span className="shield-icon">🛡️</span>
-                <span className="shield-icon">🛡️</span>
-              </div>
-              <div className="team-codes">WQ1  WQ2</div>
-              <div className="match-time">Jul 14</div>
             </div>
           </div>
         </div>
 
-        {/* ─── CENTER FINALS ─── */}
-        <div className="bracket-center">
-          <div className="trophy-room">
-            <span className="trophy-icon">🏆</span>
-            <span className="trophy-label">CHAMPION</span>
+        {/* ════════ MIDDLE: FINALS ROW ════════ */}
+        <div className="v-child v-final-row">
+          <div className="v-trophy-container">
+            <span className="v-trophy">🏆</span>
           </div>
 
-          <div className="match-card final-card">
-            <div className="flags-row">
-              <span className="shield-icon">🛡️</span>
-              <span className="shield-icon">🛡️</span>
-            </div>
-            <div className="team-codes">WS1  WS2</div>
-            <div className="match-time">Jul 19</div>
-            <span className="badge-label final-badge">FINAL</span>
-          </div>
+          <MatchCard 
+            team1="W1" team2="W1" 
+            flag1="🛡️" flag2="🛡️" 
+            score="20 Jul" 
+            bottomText="FINAL" 
+            customClass="upcoming" 
+          />
 
-          <div className="match-card bronze-card">
-            <div className="flags-row">
-              <span className="shield-icon">🛡️</span>
-              <span className="shield-icon">🛡️</span>
-            </div>
-            <div className="team-codes">LS1  LS2</div>
-            <div className="match-time">Jul 19</div>
-            <span className="badge-label bronze-badge">BRONZE-FINAL</span>
-          </div>
+          <MatchCard 
+            team1="L1" team2="L1" 
+            flag1="🛡️" flag2="🛡️" 
+            score="19 Jul" 
+            bottomText="3rd place" 
+            customClass="upcoming third-place" 
+          />
         </div>
 
-        {/* ─── RIGHT SIDE BRACKET ─── */}
-        <div className="bracket-side">
-          {/* Semifinals (Right Inner) */}
-          <div className="bracket-column sf">
-            <div className="match-card placeholder">
-              <div className="flags-row">
-                <span className="shield-icon">🛡️</span>
-                <span className="shield-icon">🛡️</span>
+        {/* ════════ BOTTOM HALF (Inverted Tree) ════════ */}
+        {/* The node directly below the trophy that feeds UP into it */}
+        <div className="v-child v-reverse-root">
+          <MatchCard team1="W99" team2="W10" flag1="🛡️" flag2="🛡️" score="16 Jul" customClass="upcoming" />
+        </div>
+
+        <div className="v-reverse-pair">
+          
+          {/* Bottom Left */}
+          <div className="v-branch-side">
+            <div className="v-branch">
+              <div className="v-reverse-child">
+                <MatchCard team1="NOR" team2="ENG" flag1="🇳🇴" flag2="🏴󠁧󠁢󠁥󠁮󠁧󠁿" score="12 Jul" />
               </div>
-              <div className="team-codes">WQ3  WQ4</div>
-              <div className="match-time">Jul 15</div>
+              <div className="v-reverse-pair">
+                <div className="v-branch-side">
+                  <MatchCard team1="BRA" team2="NOR" flag1="🇧🇷" flag2="🇳🇴" score="1 : 2" />
+                </div>
+                <div className="v-branch-side">
+                  <MatchCard team1="MEX" team2="ENG" flag1="🇲🇽" flag2="🏴󠁧󠁢󠁥󠁮󠁧󠁿" score="2 : 3" />
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Quarterfinals (Right Middle) */}
-          <div className="bracket-column qf">
-            <div className="match-card placeholder">
-              <div className="flags-row">
-                <span className="shield-icon">🛡️</span>
-                <span className="shield-icon">🛡️</span>
+          {/* Bottom Right */}
+          <div className="v-branch-side">
+            <div className="v-branch">
+              <div className="v-reverse-child">
+                <MatchCard team1="W95" team2="W96" flag1="🛡️" flag2="🛡️" score="12 Jul" customClass="upcoming" />
               </div>
-              <div className="team-codes">TBD  TBD</div>
-              <div className="match-time">Jul 12</div>
-            </div>
-
-            <div className="match-card placeholder">
-              <div className="flags-row">
-                <span className="shield-icon">🛡️</span>
-                <span className="shield-icon">🛡️</span>
+              <div className="v-reverse-pair">
+                <div className="v-branch-side">
+                  <MatchCard team1="ARG" team2="EGY" flag1="🇦🇷" flag2="🇪🇬" score="7 Jul" />
+                </div>
+                <div className="v-branch-side">
+                  <MatchCard team1="SUI" team2="COL" flag1="🇨🇭" flag2="🇨🇴" score="8 Jul" />
+                </div>
               </div>
-              <div className="team-codes">TBD  TBD</div>
-              <div className="match-time">Jul 12</div>
             </div>
           </div>
 
-          {/* Round of 16 (Right Outermost) */}
-          <div className="bracket-column r16">
-            <div className="match-card">
-              <div className="flags-row">
-                <span className="circle-flag">🇧🇷</span>
-                <span className="circle-flag">🇳🇴</span>
-              </div>
-              <div className="team-codes">BRA  NOR</div>
-              <div className="match-time status-upcoming">Tomorrow|1:30am</div>
-            </div>
-
-            <div className="match-card">
-              <div className="flags-row">
-                <span className="circle-flag">🇲🇽</span>
-                <span className="circle-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
-              </div>
-              <div className="team-codes">MEX  ENG</div>
-              <div className="match-time">Tommorow</div>
-            </div>
-
-            <div className="match-card">
-              <div className="flags-row">
-                <span className="circle-flag">🇦🇷</span>
-                <span className="circle-flag">🇪🇬</span>
-              </div>
-              <div className="team-codes">ARG  EGY</div>
-              <div className="match-time">Jul 7</div>
-            </div>
-
-            <div className="match-card">
-              <div className="flags-row">
-                <span className="circle-flag">🇨🇭</span>
-                <span className="circle-flag">🇨🇴</span>
-              </div>
-              <div className="team-codes">SUI  COL</div>
-              <div className="match-time">Jul 7</div>
-            </div>
-          </div>
         </div>
 
       </div>
