@@ -216,3 +216,51 @@
   background-color: #27272a;
   z-index: 0;
 }
+
+
+/* ════════ MOBILE RESPONSIVE ════════ */
+@media (max-width: 850px) {
+  .v-bracket-wrapper {
+    /* CRITICAL FIX: Changes from 'center' to 'flex-start' so the left side is never cut off */
+    justify-content: flex-start; 
+    padding: 30px 15px;
+  }
+  
+  .v-branch {
+    /* Adds a safe space buffer so the left cards don't touch the phone screen edge */
+    padding-left: 10px; 
+    padding-right: 10px;
+  }
+  
+  /* Shrink the cards slightly to fit better on narrow phone screens */
+  .v-match-card {
+    width: 85px; /* Shrunk down from 100px */
+    padding: 8px 10px;
+  }
+  
+  .v-branch-side {
+    padding: 0 8px; /* Tighter gaps between branches */
+  }
+
+  /* Adjust typography and icons for the smaller cards */
+  .v-flags {
+    gap: 6px;
+  }
+  
+  .v-flag {
+    font-size: 16px;
+  }
+  
+  .v-teams {
+    font-size: 11px;
+  }
+  
+  .v-score {
+    font-size: 12px;
+    padding: 2px 5px;
+  }
+
+  .v-trophy {
+    font-size: 32px;
+  }
+}
