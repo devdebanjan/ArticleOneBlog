@@ -29,7 +29,7 @@ const Navbar = ({ theme, setTheme }) => {
       fontWeight: 900,
       margin: 0,
       letterSpacing: '-1px',
-      color: '#03eb03', /* Your signature green */
+      color: '#A4FF00', /* Your signature green */
       cursor: 'pointer'
     }}
   >

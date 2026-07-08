@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 
-import logo from '../../blog/groupof32/images/The world studios.png'
+import logo from '../footer/image.svg'
 export default function Footer() {
   return (
     <footer className="custom-footer">
@@ -11,11 +11,11 @@ export default function Footer() {
           
 <div className="footer-brand">
   <div className="brand-logo">
-    {/* <img 
+    <img 
       src={logo} 
       alt="Article One Logo" 
       style={{ height: '100px', width: 'auto' }} // Adjust size as needed
-    /> */}
+    />
     <div 
   style={{
     display: 'flex',
@@ -31,7 +31,7 @@ export default function Footer() {
       fontWeight: 900,
       margin: 0,
       letterSpacing: '-1px',
-      color: '#03eb03', /* Your signature green */
+      color: '#A4FF00', /* Your signature green */
       cursor: 'pointer'
     }}
   >
@@ -41,7 +41,7 @@ export default function Footer() {
   </div>
   
 </div>
-          <h2>ArticleOne is the essential<br />football website.</h2>
+          {/* <h2>ArticleOne is the essential<br />football website.</h2> */}
         </div>
 
         {/* Links Section */}
