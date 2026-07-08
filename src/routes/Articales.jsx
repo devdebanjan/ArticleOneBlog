@@ -49,9 +49,13 @@ const Articales = () => {
         <section className="standard-articles-grid">
           {regularArticles.map((article) => (
             <Link to={article.link} key={article.id} className="standard-card">
+                 
               <span className="category-tag">{article.tag}</span>
               <h3>{article.title}</h3>
               <p>{article.excerpt}</p>
+              <div className=''>
+              <img className="featured-images" src={article.image}></img>
+              </div>
               <div className="read-more">Read Article &rarr;</div>
             </Link>
           ))}
