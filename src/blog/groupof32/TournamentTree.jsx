@@ -47,14 +47,14 @@ export default function VerticalBracket() {
             <div className="v-branch">
               <div className="v-pair">
                 <div className="v-branch-side">
-                  <MatchCard team1="POR" team2="ESP" flag1="🇵🇹" flag2="🇪🇸" score="7 Jul" />
+                  <MatchCard team1="POR" team2="ESP" flag1="🇵🇹" flag2="🇪🇸" score="0-1" />
                 </div>
                 <div className="v-branch-side">
-                  <MatchCard team1="USA" team2="BEL" flag1="🇺🇸" flag2="🇧🇪" score="7 Jul" />
+                  <MatchCard team1="USA" team2="BEL" flag1="🇺🇸" flag2="🇧🇪" score="1-4" />
                 </div>
               </div>
               <div className="v-child">
-                <MatchCard team1="W93" team2="W94" flag1="🛡️" flag2="🛡️" score="11 Jul" customClass="upcoming" />
+                <MatchCard team1="W93" team2="W94" flag1="🇪🇸" flag2="🇧🇪" score="11 Jul" customClass="upcoming" />
               </div>
             </div>
           </div>
@@ -112,14 +112,14 @@ export default function VerticalBracket() {
           <div className="v-branch-side">
             <div className="v-branch">
               <div className="v-reverse-child">
-                <MatchCard team1="W95" team2="W96" flag1="🛡️" flag2="🛡️" score="12 Jul" customClass="upcoming" />
+                <MatchCard team1="W95" team2="W96" flag1="🇦🇷" flag2="🇨🇭" score="12 Jul" customClass="upcoming" />
               </div>
               <div className="v-reverse-pair">
                 <div className="v-branch-side">
-                  <MatchCard team1="ARG" team2="EGY" flag1="🇦🇷" flag2="🇪🇬" score="7 Jul" />
+                  <MatchCard team1="ARG" team2="EGY" flag1="🇦🇷" flag2="🇪🇬" score="3-2" />
                 </div>
                 <div className="v-branch-side">
-                  <MatchCard team1="SUI" team2="COL" flag1="🇨🇭" flag2="🇨🇴" score="8 Jul" />
+                  <MatchCard team1="SUI" team2="COL" flag1="🇨🇭" flag2="🇨🇴" score="4-3" />
                 </div>
               </div>
             </div>
