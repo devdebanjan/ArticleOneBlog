@@ -1,0 +1,212 @@
+/* Import Google Font for Premium Bengali Typography */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+
+/* =========================================
+   ARTICLE LAYOUT (The Modern constraints)
+========================================= */
+.premium-article-wrapper {
+    max-width: 760px; /* This is the secret to highly readable modern blogs */
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   HEADER & TITLE
+========================================= */
+.main-article-title {
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--title-color, #FFFFFF);
+    line-height: 1.2;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* =========================================
+   PREMIUM AUTHOR BYLINE
+========================================= */
+.premium-byline {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    margin-bottom: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.author-avatar {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-gold, #C5A059); /* Signature Gold Ring */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.byline-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.author-name {
+    font-family: var(--font-ui, 'Inter', sans-serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--title-color, #FFFFFF);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-badge {
+    background: rgba(197, 160, 89, 0.15);
+    color: var(--accent-gold, #C5A059);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.byline-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    font-family: var(--font-ui, 'Inter', sans-serif);
+    font-size: 0.9rem;
+    color: var(--text-light, #A0AEC0);
+}
+
+/* Social Links Group */
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    padding-left: 15px;
+}
+
+.social-icon {
+    color: var(--text-light, #A0AEC0);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.social-icon:hover {
+    color: var(--title-color, #FFFFFF);
+}
+
+.social-icon.youtube:hover {
+    color: #FF0000; /* YouTube Red */
+}
+
+/* =========================================
+   ARTICLE TEXT (Bengali Typography)
+========================================= */
+.bengali-text {
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.9; /* Generous line height for Bengali matras */
+    color: var(--text-main, #E2E8F0);
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Optional: Editorial Drop Cap for the first letter */
+.drop-cap::first-letter {
+    float: left;
+    font-size: 4.5rem;
+    line-height: 0.8;
+    padding-right: 12px;
+    padding-top: 8px;
+    color: var(--accent-green, #9ae5f7);
+    font-weight: 700;
+}
+
+/* =========================================
+   CINEMATIC IMAGES
+========================================= */
+.article-figure {
+    margin: 50px 0;
+    width: 100%;
+}
+
+.article-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.banner-caption {
+    text-align: center;
+    font-family: var(--font-ui, 'Inter', sans-serif);
+    font-size: 0.9rem;
+    color: var(--text-light, #A0AEC0);
+    margin-top: 15px;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+
+
+   /* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+    .main-article-title {
+        font-size: 2.2rem;
+    }
+    
+    .premium-byline {
+        align-items: flex-start; 
+        gap: 15px; /* Tighter gap between the avatar and text on mobile */
+    }
+
+    .byline-details {
+        width: 100%; /* Prevents weird right-alignment gaps */
+    }
+
+    /* ─── THE FIX FOR THE SQUISHED AUTHOR NAME ─── */
+    .author-name {
+        flex-wrap: wrap; /* Allows the Featured Writer badge to drop down if space runs out */
+        gap: 8px;
+        line-height: 1.3;
+    }
+
+    .byline-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 8px; /* Adds a tiny bit of breathing room below the name */
+    }
+    
+    .social-links {
+        display: flex !important;
+        flex-direction: row !important; 
+        align-items: center;
+        border-left: none;
+        padding-left: 0;
+        gap: 15px; 
+        width: 100%;
+        flex-wrap: wrap; 
+    }
+
+    .social-icon {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        white-space: nowrap; 
+    }
+    
+    .bengali-text {
+        font-size: 1.1rem;
+    }
+}

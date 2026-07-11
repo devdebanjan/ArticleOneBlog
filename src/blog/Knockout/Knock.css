@@ -1,0 +1,306 @@
+/* =========================================
+   1. DASHBOARD LAYOUT
+========================================= */
+.home-dashboard-container {
+    max-width: 1200px;
+    margin: 40px auto; 
+    padding: 20px;
+}
+
+.animated-type-subtitle {
+    font-size: 1.2rem;
+    color: #A4FF00; /* Signature ArticleONE Green */
+    font-family: var(--font-ui, 'Inter', sans-serif);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.ornate-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    margin: 60px 0;
+}
+
+.feed-section-heading {
+    font-family: var(--font-heading, 'Playfair Display', serif);
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.latest-stories-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Space between each article card */
+}
+
+/* =========================================
+   2. HERO FEATURE (Top Story)
+========================================= */
+.hero-feature-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    background: #0d0f13;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+.hero-media-side {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content-side {
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-title {
+    font-family: var(--font-heading, 'Playfair Display', serif);
+    font-size: 3.5rem;
+    color: #fff;
+    line-height: 1.1;
+    margin: 15px 0 25px 0;
+}
+
+.hero-meta {
+    display: flex;
+    gap: 15px;
+    color: #A0AEC0;
+    font-family: var(--font-ui, 'Inter', sans-serif);
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-meta .author-name {
+    color: #fff;
+    font-weight: 700;
+}
+
+.hero-excerpt {
+    color: #CBD5E1;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* The CR7 Dropcap */
+.cristiano-dropcap {
+    font-family: var(--font-heading, 'Playfair Display', serif);
+    font-size: 4.5rem;
+    float: left;
+    line-height: 0.8;
+    padding-right: 12px;
+    padding-top: 8px;
+    background: linear-gradient(135deg, #00a455 0%, #ffd000 50%, #ff1100 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* =========================================
+   3. STANDARD FEATURE CARDS
+========================================= */
+.feature-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--card-bg, #121418);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.08));
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.reverse-card {
+    /* Flips the image and text sides for visual variety */
+    grid-template-columns: 1fr 1fr;
+    direction: rtl; 
+}
+
+.reverse-card > * {
+    direction: ltr; /* Keeps text reading normally */
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 40px 70px rgba(0, 0, 0, 0.6);
+}
+
+.feature-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.feature-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.feature-card:hover .feature-img { transform: scale(1.05); }
+
+.feature-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(18, 20, 24, 0.9));
+}
+
+.reverse-card .feature-image-overlay {
+    background: linear-gradient(to left, transparent, rgba(18, 20, 24, 0.9));
+}
+
+.feature-content {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature-badge {
+  display: inline-block;
+  background: rgba(197, 160, 89, 0.15); 
+  color: var(--accent-gold, #C5A059);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+}
+
+.feature-title {
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: 2.8rem;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+}
+
+.feature-author {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.author-text {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #C5A059;
+}
+
+.author-text strong {
+  display: block;
+  color: #E2E8F0;
+  font-size: 1rem;
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  margin-bottom: 4px;
+}
+
+.author-text span {
+  color: #A0AEC0;
+  font-size: 0.85rem;
+}
+
+.feature-excerpt {
+  color: #CBD5E1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* =========================================
+   4. BUTTON STYLING (FIXED)
+========================================= */
+.feature-cta-btn {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: #0B0E14;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none; /* Removes default link underline */
+  transition: all 0.3s ease;
+}
+
+.feature-cta-btn:hover {
+  background: #A4FF00; /* Signature Green */
+  color: #0B0E14;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(164, 255, 0, 0.2);
+}
+
+.feature-cta-btn span {
+    transition: transform 0.3s ease;
+}
+
+.feature-cta-btn:hover span {
+    transform: translateX(5px);
+}
+
+/* =========================================
+   5. MOBILE RESPONSIVENESS
+========================================= */
+@media (max-width: 900px) {
+  .hero-feature-card,
+  .feature-card,
+  .reverse-card {
+    grid-template-columns: 1fr;
+    direction: ltr; /* Reset reverse card on mobile */
+  }
+
+  .hero-media-side,
+  .feature-image-container {
+    min-height: 300px;
+    height: 300px;
+  }
+
+  .hero-title {
+      font-size: 2.5rem;
+  }
+
+  .feature-title {
+    font-size: 2.2rem;
+  }
+
+  .feature-image-overlay {
+    background: linear-gradient(to bottom, transparent, rgba(18, 20, 24, 0.95));
+  }
+}

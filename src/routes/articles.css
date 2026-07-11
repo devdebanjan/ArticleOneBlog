@@ -6,7 +6,7 @@
     max-width: 900px;
     margin: 0 auto;
     padding: 60px 20px;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-ui, 'Inter', sans-serif);
 }
 
 /* --- 1. HEADER --- */
@@ -16,7 +16,7 @@
 }
 
 .main-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading, 'Playfair Display', serif);
     font-size: 3.5rem;
     font-weight: 900;
     color: #111827;
@@ -34,7 +34,15 @@
 }
 .container.dark .sub-title { color: #9CA3AF; }
 
-/* --- 2. FEATURED ARTICLE (From edited-image_3.png) --- */
+.editorial-title {
+    font-family: var(--font-heading, 'Playfair Display', serif);
+    font-size: 2rem;
+    color: #111827;
+    margin-bottom: 30px;
+}
+.container.dark .editorial-title { color: #FFFFFF; }
+
+/* --- 2. FEATURED ARTICLE --- */
 .featured-card {
     display: flex;
     background: #FFFFFF;
@@ -60,10 +68,11 @@
 .featured-image-wrapper {
     flex: 1;
     min-width: 300px;
+  
 }
 
 .featured-image {
-    width: 100%;
+    width: 80%;
     height: 100%;
     object-fit: cover;
 }
@@ -76,21 +85,11 @@
     justify-content: center;
 }
 
-.category-tag {
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #c09e5b; /* The gold/mustard accent */
-    margin-bottom: 15px;
-    display: block;
-}
-
 .featured-content h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-family: var(--font-heading, 'Playfair Display', serif);
+    font-size: 2.2rem;
     font-weight: 800;
-    color: #4B1E7A; /* The purple text from your design */
+    color: #4B1E7A; 
     margin-bottom: 15px;
     line-height: 1.2;
 }
@@ -125,16 +124,18 @@
 }
 .container.dark .ornate-divider { background: linear-gradient(to right, transparent, #4B5563, transparent); }
 
-/* --- 4. STANDARD ARTICLES GRID (From edited-image_4.png) --- */
+/* --- 4. STANDARD ARTICLES GRID --- */
 .standard-articles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px; /* Space between the cards */
+  gap: 30px; 
   margin-bottom: 60px;
   width: 100%;
 }
 
 .standard-card {
+    display: flex;
+    flex-direction: column;
     background: #FFFFFF;
     padding: 30px;
     border-radius: 12px;
@@ -153,7 +154,7 @@
 .container.dark .standard-card { background: #1F2937; border-color: #374151; }
 
 .standard-card h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading, 'Playfair Display', serif);
     font-size: 1.4rem;
     color: #4B1E7A;
     margin-bottom: 10px;
@@ -165,10 +166,71 @@
     font-size: 0.95rem;
     color: #4B5563;
     line-height: 1.6;
+    flex-grow: 1; /* Pushes the Read More link to the bottom */
 }
 .container.dark .standard-card p { color: #9CA3AF; }
 
-/* --- 5. CURATION & OPEN CALL (From edited-image_2.png) --- */
+/* --- GRID IMAGE FIX --- */
+.card-image-wrapper {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.featured-images {
+    width: 100%;
+    height: 220px; /* Locks all grid images to the same exact height */
+    object-fit: cover; /* Crops neatly without squishing */
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.container.dark .featured-images { border-color: rgba(255, 255, 255, 0.05); }
+
+/* --- 5. CATEGORY TAGS (The Outlined Pill) --- */
+.category-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #c09e5b; 
+    border: 1px solid #c09e5b;
+    border-radius: 30px; 
+    padding: 6px 16px;
+    display: inline-block;
+    margin-bottom: 15px;
+    width: max-content; 
+}
+
+/* --- MISSING IMAGE PLACEHOLDER --- */
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    background: linear-gradient(135deg, #111827, #374151);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c09e5b;
+    font-weight: 800;
+    letter-spacing: 4px;
+    opacity: 0.8;
+}
+
+/* --- "READ ARTICLE" BUTTON ON STANDARD CARDS --- */
+.read-more {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #c09e5b;
+    transition: color 0.2s ease;
+}
+
+.standard-card:hover .read-more {
+    color: #A78BFA; 
+}
+
+/* --- 6. CURATION & OPEN CALL --- */
 .curation-section {
     margin-top: 20px;
 }
@@ -213,7 +275,7 @@
 }
 
 .curation-header h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading, 'Playfair Display', serif);
     font-size: 1.8rem;
     color: #111827;
     margin-bottom: 10px;
@@ -260,7 +322,7 @@
 }
 
 .cta-text h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading, 'Playfair Display', serif);
     font-size: 2rem;
     color: #111827;
     margin-bottom: 15px;
@@ -309,7 +371,7 @@
 }
 
 /* =========================================
-   6. MOBILE RESPONSIVENESS
+   7. MOBILE RESPONSIVENESS
 ========================================= */
 @media (max-width: 768px) {
     .main-title { font-size: 2.8rem; }
@@ -342,65 +404,4 @@
         width: 100%;
         justify-content: center;
     }
-}
-/* --- UPDATES FOR CATEGORY TAGS (The Outlined Pill) --- */
-.category-tag {
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #c09e5b; 
-    border: 1px solid #c09e5b; /* Adds the gold border */
-    border-radius: 30px; /* Makes it a pill shape */
-    padding: 6px 16px;
-    display: inline-block;
-    margin-bottom: 15px;
-    width: max-content; /* Stops it from stretching */
-}
-
-/* --- MISSING IMAGE PLACEHOLDER --- */
-.image-placeholder {
-    width: 100%;
-    height: 100%;
-    min-height: 300px;
-    background: linear-gradient(135deg, #111827, #374151);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #c09e5b;
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    letter-spacing: 4px;
-    opacity: 0.8;
-}
-
-/* --- "READ ARTICLE" BUTTON ON STANDARD CARDS --- */
-.read-more {
-    margin-top: 20px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #c09e5b;
-    transition: color 0.2s ease;
-}
-
-.standard-card:hover .read-more {
-    color: #A78BFA; /* Changes color when you hover over the card */
-}
-
-/* Make standard cards use Flexbox to push the "Read More" link to the bottom */
-.standard-card {
-    display: flex;
-    flex-direction: column;
-}
-.standard-card p {
-    flex-grow: 1; /* Pushes the Read More link to the bottom */
-}
-
-
-.featured-images {
-    width: 70%;
-    height: 100%;
-    object-fit: cover;
 }

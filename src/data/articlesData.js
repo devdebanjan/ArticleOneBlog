@@ -8,9 +8,51 @@ import Neymar from '../ComeBack/Neymar.jpg'
 
 import banner from '../blog/groupof32/images/banner.jpeg'
 
+import Card from '../blog/Knockout/media/card.jpeg'
+
+import Ronaldo from '../blog/Full_article/Ronaldo.jpeg'
+import Fixture from '../blog/Full_article/fixture.png'
+
+import neymarjr from '../blog/Knockout/media/Neymar.jpeg'
+
+
 export const articlesData = [
   {
     id: 1,
+    tag: "Portugal Out",
+    title: "End of an Era",
+    excerpt: "Neymar 981 days journey || Round of 32",
+    image: Ronaldo, // <--- CHANGE THIS FROM null TO heroImage
+    date: "June 28, 2026",
+    readTime: "10 min read",
+    link: "/Fifa-knockout", 
+    isFeatured: true,      
+    isUpcoming: false } ,
+     
+    {id: 2,
+    tag: "Qarter Final Analysis",
+    title: "All games stats analysis",
+    excerpt: "Neymar 981 days journey || Round of 32",
+    image: Fixture, // <--- CHANGE THIS FROM null TO heroImage
+    date: "June 28, 2026",
+    readTime: "10 min read",
+    link: "/QaFinals", 
+    isFeatured: false,      
+    isUpcoming: false      
+  },
+  {id: 3,
+    tag: "VAR DRAMA",
+    title: "Argentina Rigged Egypt",
+    excerpt: "Neymar 981 days journey || Round of 32",
+    image: Card, // <--- CHANGE THIS FROM null TO heroImage
+    date: "June 28, 2026",
+    readTime: "10 min read",
+    link: "/Reffari", 
+    isFeatured: false,      
+    isUpcoming: false      
+  },
+
+    {id: 4,
     tag: "Round of 32",
     title: "The Race  Round of 32",
     excerpt: "Neymar 981 days journey || Round of 32",
@@ -18,11 +60,11 @@ export const articlesData = [
     date: "June 28, 2026",
     readTime: "10 min read",
     link: "/Fifa-knockout", 
-    isFeatured: true,      
+    isFeatured: false,      
     isUpcoming: false      
   },
    {
-    id: 2,
+    id: 5,
     tag: "Round of 32",
     title: "The Race  Round of 32",
     excerpt: "Neymar 981 days journey || Round of 32",
@@ -34,7 +76,7 @@ export const articlesData = [
     isUpcoming: false      
   },
   {
-    id: 3,
+    id: 6,
     tag: "Fifa 2026 First week Recap",
     title: "The roolercoaseter week....",
     excerpt: "The best fifa games weekly recap, Lets deep dive intoit.....",
@@ -46,7 +88,7 @@ export const articlesData = [
     isUpcoming: false      
   },
   {
-    id: 4,
+    id: 7,
     tag: "Women's T20 World Cup 2026",
     title: "Athletic Evolution, Statistical Extremes...",
     excerpt: "From the ultimate India vs. Pakistan opener...",
@@ -59,7 +101,7 @@ export const articlesData = [
   },
   // ... rest of your data,
   {
-    id: 5,
+    id: 8,
     tag: "FIFA World Cup 2026",
     title: "My Memories: A Journey That Never Ends",
     excerpt: "The global tapestry of the 2026 FIFA World Cup: Cultural phenomenon, tactical evolution, and the 48-team era.",
@@ -71,3 +113,17 @@ export const articlesData = [
     isUpcoming: false
   }
 ];
+
+export const featureData = [
+  {
+    id: 1,
+    tag: "Portugal Out",
+    title: "End of an Era",
+    excerpt: "Neymar 981 days journey || Round of 32",
+    image: neymarjr, // <--- CHANGE THIS FROM null TO heroImage
+    date: "June 28, 2026",
+    readTime: "10 min read",
+    link: "/Features", 
+    isFeatured: false,      
+    isUpcoming: false } 
+]

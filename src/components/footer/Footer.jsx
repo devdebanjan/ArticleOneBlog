@@ -1,61 +1,42 @@
 import React from 'react';
 import './Footer.css';
+import logo from '../footer/FinalLogo3.png';
 
-import logo from '../footer/image.svg'
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
   return (
     <footer className="custom-footer">
       <div className="footer-top">
-        {/* Brand Section */}
+        
+        {/* 1. Brand Section */}
         <div className="footer-brand">
-          
-<div className="footer-brand">
-  <div className="brand-logo">
-    <img 
-      src={logo} 
-      alt="Article One Logo" 
-      style={{ height: '100px', width: 'auto' }} // Adjust size as needed
-    />
-    <div 
-  style={{
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginLeft: '80px'
-  }}
->
-  <h2 
-    style={{
-      fontFamily: 'var(--font-heading, "Playfair Display", serif)',
-      fontSize: '32px',
-      fontWeight: 900,
-      margin: 0,
-      letterSpacing: '-1px',
-      color: '#A4FF00', /* Your signature green */
-      cursor: 'pointer'
-    }}
-  >
-    ArticleONE
-  </h2>
-</div>
-  </div>
-  
-</div>
-          {/* <h2>ArticleOne is the essential<br />football website.</h2> */}
+          <div className="brand-header">
+            <img src={logo} alt="Article One Logo" className="brand-icon" />
+            <div className="brand-doc">
+                        <h2 className="brand-text">
+                            Article<span>ONE</span>
+                        </h2>
+            </div>
+          </div>
+          <h3 className="brand-slogan">
+            ArticleOne is the essential<br />Sports|| Story || Game Analysis || website.
+          </h3>
         </div>
 
-        {/* Links Section */}
+        {/* 2. Links Section */}
         <div className="footer-links">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Articles</a></li>
-            <li><a href="#">About</a></li>
+            <li><Link to="/">Home</Link></li>
+            
+            <li><Link to="/Articales">Articles</Link></li>
+            <li><Link to="/About">About</Link></li>
             
           </ul>
         </div>
 
-        {/* App Download Section */}
-       
+        
+
       </div>
 
       <div className="footer-bottom">

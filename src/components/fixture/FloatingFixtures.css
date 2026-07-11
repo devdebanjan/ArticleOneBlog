@@ -1,0 +1,318 @@
+/* =========================================
+   1. THE FLOATING FOOTBALL (PRESERVED FIXES)
+========================================= */
+.floating-ball-btn {
+    position: fixed;
+    bottom: 140px; 
+    right: 30px;   
+    z-index: 9999;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    border: none;
+    outline: none; 
+    padding: 0;
+}
+
+.floating-ball-btn:focus { outline: none; }
+
+.football-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #A4FF00; 
+    color: #121418; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(164, 255, 0, 0.3); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spinning-football {
+    font-size: 32px; 
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spin-ball 6s linear infinite; 
+}
+
+.floating-ball-btn:hover .football-wrapper {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(164, 255, 0, 0.6);
+}
+
+.floating-ball-btn:hover .spinning-football { animation-play-state: paused; }
+
+@keyframes spin-ball {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.ball-tooltip {
+    margin-top: 10px;
+    background: #121418;
+    color: #fff;
+    font-family: var(--font-ui, 'Inter', sans-serif);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.floating-ball-btn:hover .ball-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   2. BRACKET MODAL BASE
+========================================= */
+.fixture-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.fixture-modal-content {
+    background: #1e1e1e; /* Dark theme from screenshot */
+    width: 100%;
+    max-width: 550px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.fixture-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.fixture-modal-header h3 {
+    margin: 0;
+    font-family: var(--font-heading, 'Playfair Display', serif);
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.close-modal-btn {
+    background: transparent;
+    border: none;
+    color: #888;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-modal-btn:hover { color: #fff; }
+
+/* =========================================
+   3. TOURNAMENT BRACKET LAYOUT
+========================================= */
+.bracket-scroll-container {
+    padding: 30px 20px;
+    overflow-y: auto;
+    overflow-x: auto;
+    max-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1a1a1a;
+}
+
+.bracket-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.match-row {
+    display: flex;
+    justify-content: center;
+    gap: 80px; /* Space between the two QF matches */
+    width: 100%;
+}
+
+.sf-row {
+    margin: 0;
+}
+
+.finals-row {
+    gap: 20px;
+    margin: 20px 0;
+    align-items: center;
+}
+
+/* -- The Match Box -- */
+.match-box {
+    background: #252526;
+    border: 1px solid #3e3e42;
+    border-radius: 12px;
+    padding: 12px 20px;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.active-match {
+    border-color: #4ade80; /* Bright green border for active match */
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.1);
+}
+
+.match-teams {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 8px;
+}
+
+.team-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.flag { font-size: 1.5rem; }
+
+.team-code {
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.score {
+    color: #aaa;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+}
+
+.match-status {
+    color: #888;
+    font-size: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    margin-top: 5px;
+}
+
+/* -- Badges -- */
+.match-badge {
+    position: absolute;
+    bottom: -10px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    color: #121212;
+}
+
+.badge-blue { background: #60a5fa; }
+.badge-gold { background: #fbbf24; }
+
+/* -- The Connector Lines -- */
+.connector-fork-down {
+    height: 25px;
+    width: calc(120px + 80px); /* Match box width + gap */
+    border-bottom: 2px solid #444;
+    border-left: 2px solid #444;
+    border-right: 2px solid #444;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.connector-fork-up {
+    height: 25px;
+    width: calc(120px + 80px);
+    border-top: 2px solid #444;
+    border-left: 2px solid #444;
+    border-right: 2px solid #444;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.connector-line-vertical {
+    width: 2px;
+    height: 25px;
+    background: #444;
+}
+
+/* -- Trophy Section -- */
+.trophy-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #888;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.trophy-icon {
+    font-size: 3rem;
+    opacity: 0.5;
+    margin-bottom: 5px;
+}
+
+/* =========================================
+   4. MOBILE ADJUSTMENTS
+========================================= */
+@media (max-width: 768px) {
+    .floating-ball-btn {
+        bottom: 150px !important; 
+        right: 48px !important;   
+    }
+    
+    .football-wrapper {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .spinning-football { font-size: 26px !important; }
+    .ball-tooltip { display: none !important; }
+    
+    /* Shrink bracket slightly for mobile screens */
+    .match-row { gap: 30px; }
+    .connector-fork-down, .connector-fork-up { width: calc(110px + 30px); }
+    .match-box { min-width: 100px; padding: 10px; }
+    .finals-row { flex-direction: column; }
+    .trophy-section { margin-top: 15px; }
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/navbar/Navbar.jsx';
 import ScrollTracker from './components/scrollbar/ScrollTracker.jsx'
+import FloatingFixtures from './components/fixture/FloatingFixtures.jsx';
 import { Routes, Route } from 'react-router-dom'; 
 
 // --- PAGES & ARTICLES ---
@@ -12,6 +13,12 @@ import Recap from './blog/StrategicReviewArticle.jsx'
 import Neymar from './blog/Journal.jsx'
 
 import Roundof32 from './blog/groupof32/Blg.jsx'
+import Knockout from './blog/Knockout/Knock.jsx'
+import Feature from './feature/01featue.jsx'
+import Qafinal from './blog/QuarterFinal/Qafinal.jsx';
+import Ronaldo from './blog/Full_article/Ronaldo.jsx'
+
+import Reffari from './blog/Full_article/Reffari.jsx'
 
 import Footer from './components/footer/Footer.jsx'
 
@@ -26,7 +33,7 @@ const App = () => {
      
       <Routes>
           {/* --- TOMORROW: Make T20Article the Home Page --- */}
-          <Route path='/' element={<Roundof32 className={`content ${theme}`} />} />
+          <Route path='/' element={<Knockout className={`content ${theme}`} />} />
           
           {/* Your archive links stay exactly the same */}
           <Route path='/fifa-memories' element={<Blog className={`content ${theme}`} />} />
@@ -34,12 +41,17 @@ const App = () => {
           <Route path='/Fifa-recap-week' element={<Recap className={`content ${theme}`} />}/>
           <Route path='/Fifa-roundof32' element={<Neymar className={`content ${theme}`} />}/>
           <Route path='/Fifa-knockout' element={<Roundof32 className={`content ${theme}`} />}/>
-          
+          <Route path='/Features' element={<Feature className={`content ${theme}`} />}/>
+          <Route path='/QaFinals' element={<Qafinal className={`content ${theme}`} />}/>
+          <Route path='/Ronaldo' element={<Ronaldo className={`content ${theme}`} />}/>
+          <Route path='/Reffari' element={<Reffari className={`content ${theme}`} />}/>
           {/* Menus */}
           <Route path='/About' element={<About className={`background ${theme}`}/>} />
           <Route path='/Articales' element={<Articales className={`background ${theme}`}/>} />
       </Routes>
+      <FloatingFixtures/>
       <ScrollTracker />
+      
       <Footer/>
     </div>
   );

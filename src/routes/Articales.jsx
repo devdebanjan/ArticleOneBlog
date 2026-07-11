@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './articles.css'; 
-import { articlesData } from '../data/articlesData'; 
+import { articlesData , featureData } from '../data/articlesData';
 
 const Articales = () => {
   const featuredArticle = articlesData.find(article => article.isFeatured);
   const regularArticles = articlesData.filter(article => !article.isFeatured && !article.isUpcoming);
+  const specialArticle = featureData.filter(article => !article.isFeatured && !article.isUpcoming);
 
   return (
     <div className="editorial-container fade-in">
@@ -19,7 +20,6 @@ const Articales = () => {
         <section className="featured-article-section">
           <Link to={featuredArticle.link} className="featured-card">
             <div className="featured-image-wrapper">
-              {/* If image exists, show it. Otherwise, show a sleek placeholder */}
               {featuredArticle.image ? (
                 <img src={featuredArticle.image} alt={featuredArticle.title} className="featured-image" />
               ) : (
@@ -43,25 +43,45 @@ const Articales = () => {
 
       <div className="ornate-divider"></div>
 
-      {/* --- 2. ARCHIVE GRID --- */}
-      <h2 className="editorial-title">Editorial Section : </h2>
-      {regularArticles.length > 0 && (
+      <h2 className="editorial-title">Featured Edition: </h2>
+      {specialArticle.length > 0 && (
         <section className="standard-articles-grid">
-          {regularArticles.map((article) => (
+          {specialArticle.map((article) => (
             <Link to={article.link} key={article.id} className="standard-card">
-                 
               <span className="category-tag">{article.tag}</span>
               <h3>{article.title}</h3>
               <p>{article.excerpt}</p>
-              <div className=''>
-              <img className="featured-images" src={article.image}></img>
+              
+              {/* Image wrapper to enforce uniform height */}
+              <div className="card-image-wrapper">
+                <img className="featured-images" src={article.image} alt={article.title} />
               </div>
+              
               <div className="read-more">Read Article &rarr;</div>
             </Link>
           ))}
         </section>
       )}
-      
+        
+      <h2 className="editorial-title">Editorial Section : </h2>
+      {regularArticles.length > 0 && (
+        <section className="standard-articles-grid">
+          {regularArticles.map((article) => (
+            <Link to={article.link} key={article.id} className="standard-card">
+              <span className="category-tag">{article.tag}</span>
+              <h3>{article.title}</h3>
+              <p>{article.excerpt}</p>
+              
+              {/* Image wrapper to enforce uniform height */}
+              <div className="card-image-wrapper">
+                <img className="featured-images" src={article.image} alt={article.title} />
+              </div>
+              
+              <div className="read-more">Read Article &rarr;</div>
+            </Link>
+          ))}
+        </section>
+      )}
 
       {/* --- 3. CURATION & OPEN CALL CTA --- */}
       <section className="curation-section">
