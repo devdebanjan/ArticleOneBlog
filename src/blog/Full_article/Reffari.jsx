@@ -210,6 +210,12 @@ export default function ArgentinaEgyptMatchReport() {
         <p>
           Cristian Romero ignited the spark, scoring a towering 79th-minute header. Just four minutes later, Lionel Messi found the equalizer in the 83rd minute, sending the crowd into a frenzy. The ultimate heartbreak for Egypt arrived in stoppage time when Enzo Fernández secured the miraculous victory with a 93rd-minute header.
         </p>
+         <p>
+          The spectacular match, however, was severely marred by officiating controversies surrounding referee François Letexier. Egypt's manager, Hossam Hassan, furiously condemned the refereeing as rigged, specifically citing a controversially disallowed goal and a denied penalty that could have shifted the momentum back to the Pharaohs. 
+        </p>
+        <p>
+          In the aftermath of the chaotic finish, the Egyptian Football Association formally submitted a complaint to FIFA. Despite the intense backlash, refereeing chief Pierluigi Collina publicly defended the officials' integrity, firmly standing by the VAR decisions made on the pitch.
+        </p>
 
         {/* Inline Referee Image */}
         <figure className="inline-image-showcase">
@@ -219,11 +225,23 @@ export default function ArgentinaEgyptMatchReport() {
           </figcaption>
         </figure>
 
+       
+        <h3>Pierluigi Collina (FIFA Referee Chief) Explained -----</h3>
+
         <p>
-          The spectacular match, however, was severely marred by officiating controversies surrounding referee François Letexier. Egypt's manager, Hossam Hassan, furiously condemned the refereeing as rigged, specifically citing a controversially disallowed goal and a denied penalty that could have shifted the momentum back to the Pharaohs. 
-        </p>
-        <p>
-          In the aftermath of the chaotic finish, the Egyptian Football Association formally submitted a complaint to FIFA. Despite the intense backlash, refereeing chief Pierluigi Collina publicly defended the officials' integrity, firmly standing by the VAR decisions made on the pitch.
+          🗣️ Pierluigi Collina (FIFA Referee Chief) explains two controversial decisions in the Argentina vs Egypt match:
+
+          🔴 Egypt's goal was disallowed because Marwan Attia clearly stepped on Lisandro Martínez's foot before scoring. The referee made the correct decision to disallow the goal.
+
+          🟢 The duel between Salah and Julián Álvarez was deemed normal contact in play, not a foul. The referee was right to let the game continue.
+
+          🗣️ Pierluigi Collina:
+
+          "After every goal, VAR checks the entire attacking phase. If there's a foul in the build-up that affects the goal, the referee will be directed to review it."
+
+          "Marwan Attia clearly stepped on Lisandro Martínez's foot. A foul is still a foul."
+
+          "Salah vs Álvarez incident? It was considered fair contact by the referee and VAR."
         </p>
       </article>
 

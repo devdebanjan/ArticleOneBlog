@@ -107,6 +107,145 @@ export default function QuarterFinalAnalysis() {
 
         </section>
       ))}
+      <section className="coming-soon-wrapper fade-in">
+      
+      {/* ─── INJECTED CSS ─── */}
+      <style>
+        {`
+          .coming-soon-wrapper {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+          }
+
+          .teaser-box {
+            position: relative;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(164, 255, 0, 0.03) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 50px 40px;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+          }
+
+          .teaser-box:hover {
+            transform: translateY(-3px);
+            border-color: rgba(164, 255, 0, 0.2);
+          }
+
+          /* Subtle background glow */
+          .teaser-glow {
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(164, 255, 0, 0.08) 0%, transparent 70%);
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: 0;
+          }
+
+          /* Content Layer */
+          .teaser-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          /* Live Status Indicator */
+          .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(164, 255, 0, 0.1);
+            color: #A4FF00;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-family: var(--font-ui, 'Inter', sans-serif);
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+          }
+
+          .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #A4FF00;
+            border-radius: 50%;
+            position: relative;
+          }
+
+          .pulse-dot::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 50%;
+            background-color: rgba(164, 255, 0, 0.5);
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+          }
+
+          @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(2.5); opacity: 0; }
+          }
+
+          /* Typography */
+          .teaser-title {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin: 0 0 15px 0;
+            line-height: 1.2;
+          }
+
+          .teaser-text {
+            font-family: var(--font-ui, 'Inter', sans-serif);
+            font-size: 1.1rem;
+            color: #A0AEC0;
+            max-width: 600px;
+            line-height: 1.7;
+            margin: 0;
+          }
+
+          /* Mobile Responsiveness */
+          @media (max-width: 768px) {
+            .teaser-box { padding: 40px 20px; }
+            .teaser-title { font-size: 2rem; }
+            .teaser-text { font-size: 1rem; }
+          }
+        `}
+      </style>
+
+      {/* ─── COMPONENT JSX ─── */}
+      <div className="teaser-box">
+        <div className="teaser-glow"></div>
+        <div className="teaser-content">
+          
+          <div className="status-badge">
+            <div className="pulse-dot"></div>
+            Currently Drafting
+          </div>
+          
+          <h2 className="teaser-title">The Other Two Matches</h2>
+          
+          <p className="teaser-text">
+            Comprehensive statistical analysis and tactical deep-dives for the remaining games are in the editing room. Stay tuned.
+          </p>
+
+        </div>
+      </div>
+      
+    </section>
     </div>
   );
 }
