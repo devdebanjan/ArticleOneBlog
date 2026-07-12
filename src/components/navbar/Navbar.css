@@ -55,7 +55,10 @@
     color: inherit;
     cursor: pointer;
 }
-
+.brand-text a {
+    text-decoration: none !important;
+    color: #ffffff !important; 
+}
 .brand-text span {
     color: #A4FF00; /* Signature green */
 }

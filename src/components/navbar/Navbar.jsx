@@ -30,7 +30,7 @@ const Navbar = ({ theme, setTheme }) => {
                     {/* Center Brand Logo */}
                     <div className="brand-container">
                         <h2 className="brand-text">
-                            Article<span>ONE</span>
+                           <Link to={"/"}> Article<span>ONE</span> </Link>
                         </h2>
                     </div>
 

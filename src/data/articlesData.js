@@ -25,7 +25,7 @@ export const articlesData = [
     image: Ronaldo, // <--- CHANGE THIS FROM null TO heroImage
     date: "June 28, 2026",
     readTime: "10 min read",
-    link: "/Fifa-knockout", 
+    link: "/Ronaldo", 
     isFeatured: true,      
     isUpcoming: false } ,
      
