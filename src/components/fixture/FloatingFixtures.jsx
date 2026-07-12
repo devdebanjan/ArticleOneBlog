@@ -77,15 +77,15 @@ export default function FloatingFixtures() {
                 <div className="connector-line-vertical"></div>
                 
                 <div className="match-row sf-row">
-                  <MatchBox team1="TBD" flag1="🛡️" score1="-" team2="TBD" flag2="🛡️" score2="-" status="Jul 15" active={true} />
+                  <MatchBox team1="ENG" flag1="🏴󠁧󠁢󠁥󠁮󠁧󠁿" score1="-" team2="ARG" flag2="🇦🇷" score2="-" status="Jul 15" active={true} />
                 </div>
 
                 <div className="connector-line-vertical"></div>
                 <div className="connector-fork-up"></div>
 
                 <div className="match-row qf-row">
-                  <MatchBox team1="NOR" flag1="🇳🇴" score1="-" team2="ENG" flag2="🏴󠁧󠁢󠁥󠁮󠁧󠁿" score2="-" status="Tomorrow" />
-                  <MatchBox team1="ARG" flag1="🇦🇷" score1="-" team2="SUI" flag2="🇨🇭" score2="-" status="Tomorrow" />
+                  <MatchBox team1="NOR" flag1="🇳🇴" score1="1" team2="ENG" flag2="🏴󠁧󠁢󠁥󠁮󠁧󠁿" score2="2" status="Today" />
+                  <MatchBox team1="ARG" flag1="🇦🇷" score1="3" team2="SUI" flag2="🇨🇭" score2="1" status="Today" />
                 </div>
               </div>
 
