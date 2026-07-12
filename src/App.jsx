@@ -22,6 +22,8 @@ import Reffari from './blog/Full_article/Reffari.jsx'
 
 import Footer from './components/footer/Footer.jsx'
 
+import ScrollToTop from './components/ScrollToTop/ScrollToTop.jsx';
+
 // ... rest of your App.jsx code stays the same
 
 const App = () => {
@@ -30,6 +32,7 @@ const App = () => {
   return (
     <div className={`container ${theme}`}>
       <Navbar theme={theme} setTheme={setTheme} />
+      <ScrollToTop/>
      
       <Routes>
           {/* --- TOMORROW: Make T20Article the Home Page --- */}
