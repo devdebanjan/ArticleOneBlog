@@ -1,307 +1,314 @@
-/* --- MAIN WRAPPER LAYOUT --- */
-.about-wrapper {
-    display: flex;
-    gap: 60px;
-    align-items: flex-start;
+/* =========================================
+   VINTAGE TYPEWRITER THEME (FULL PAGE)
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap');
+
+:root {
+    --font-typewriter: 'Courier Prime', 'Courier New', Courier, monospace;
+    --font-stamp: 'Special Elite', cursive;
+    
+    --paper-bg: #F4F1EA;
+    --ink-black: #2C2C2C;
+    --ink-faded: #5A5A5A;
+    --ribbon-red: #8B0000;
+    --sepia-border: #D2C8B8;
 }
 
-/* --- IMAGE COLUMN STYLING --- */
-.about-image-column {
-    flex: 0 0 320px;
+.vintage-editorial-container {
+    padding: 60px 20px;
+    background-color: #050508; 
+    min-height: 100vh;
+}
+
+/* --- THE PAPER CANVAS --- */
+.vintage-paper-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    
+    background-color: var(--paper-bg);
+    background-image: 
+        radial-gradient(circle, rgba(0,0,0,0.02) 1px, transparent 1px),
+        radial-gradient(circle, rgba(0,0,0,0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    
+    padding: 60px 50px;
+    border-radius: 4px; 
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.8),
+        inset 0 0 50px rgba(139, 69, 19, 0.05); 
+    border: 1px solid var(--sepia-border);
+}
+
+/* --- IMAGE COLUMN --- */
+.vintage-image-column {
+    flex: 0 0 300px;
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-.about-avatar {
+.vintage-photo-frame {
+    padding: 10px;
+    background: #fff;
+    border: 1px solid var(--sepia-border);
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+    transform: rotate(-2deg); 
+}
+
+.vintage-avatar {
     width: 100%;
     height: auto;
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    border: 1px solid var(--glass-border);
-    object-fit: cover;
-    transition: transform 0.4s ease;
+    display: block;
+    filter: sepia(0.4) contrast(1.1) grayscale(0.2); 
 }
 
-.about-avatar:hover {
-    transform: scale(1.02);
+.vintage-social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* Contact Card */
-.about-contact-card {
-    background: var(--card-bg);
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid var(--glass-border);
-    text-align: center;
-}
-
-.about-contact-card h3 {
-    font-family: var(--font-ui);
-    color: var(--accent-dark);
-    font-size: 1.2rem;
-    margin: 0 0 5px 0;
-}
-
-.contact-subtext {
+.vintage-social-btn {
+    text-decoration: none;
+    padding: 12px 15px;
+    font-family: var(--font-typewriter);
+    font-weight: 700;
     font-size: 0.9rem;
-    color: var(--text-light);
-    margin-bottom: 20px;
-    font-style: italic;
-}
-
-.social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.social-btn {
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-family: var(--font-ui);
-    font-weight: 700;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    color: var(--ink-black);
+    border: 2px solid var(--ink-black);
+    background: transparent;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-align: center;
+    transition: all 0.2s ease;
 }
 
-/* Custom Instagram Button */
-.insta-btn {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    color: white;
-    border: none;
-    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.2);
+.vintage-social-btn:hover {
+    background: var(--ink-black);
+    color: var(--paper-bg);
+    transform: translateY(2px); 
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
 }
 
-.insta-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(220, 39, 67, 0.4);
+.email-variant {
+    border-color: var(--ribbon-red);
+    color: var(--ribbon-red);
 }
 
-/* Custom Email Button */
-/* --- BASE SOCIAL BUTTON STYLING --- */
-.social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.email-variant:hover {
+    background: var(--ribbon-red);
+    color: var(--paper-bg);
 }
 
-.social-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-family: var(--font-ui);
-    font-weight: 700;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    overflow: hidden; /* Keeps animations inside the button */
-}
-
-/* Base Icon Styling */
-.social-icon {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.3s ease;
-}
-
-
-/* --- 1. FACEBOOK BUTTON (The "Bounce/Like" Effect) --- */
-.fb-btn {
-    background: transparent;
-    color: var(--text-main);
-    border: 1px solid #1877F2; /* Facebook Blue */
-}
-
-.fb-btn:hover {
-    background: #1877F2;
-    color: #FFFFFF;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(24, 119, 242, 0.3);
-}
-
-.fb-btn:hover .fb-icon {
-    animation: fbBounce 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-}
-
-@keyframes fbBounce {
-    0% { transform: scale(1) translateY(0); }
-    30% { transform: scale(0.8) translateY(-4px) rotate(-10deg); }
-    60% { transform: scale(1.2) translateY(2px) rotate(5deg); }
-    100% { transform: scale(1) translateY(0) rotate(0); }
-}
-
-
-/* --- 2. INSTAGRAM BUTTON (The "Camera Focus/Pop" Effect) --- */
-.insta-btn {
-    background: transparent;
-    color: var(--text-main);
-    border: 1px solid #dc2743; /* Instagram Red/Pink */
-}
-
-.insta-btn:hover {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    color: #FFFFFF;
-    border-color: transparent;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(220, 39, 67, 0.3);
-}
-
-.insta-btn:hover .insta-icon {
-    animation: instaFocus 0.6s ease forwards;
-}
-
-@keyframes instaFocus {
-    0% { transform: scale(1) rotate(0deg); opacity: 1; }
-    50% { transform: scale(0.6) rotate(15deg); opacity: 0.5; }
-    100% { transform: scale(1.1) rotate(0deg); opacity: 1; }
-}
-
-
-/* --- 3. EMAIL BUTTON (The "Fly Away" Effect) --- */
-.email-btn {
-    background: transparent;
-    color: var(--text-main);
-    border: 1px solid var(--text-light);
-}
-
-.email-btn:hover {
-    background: var(--text-main);
-    color: var(--bg-color); /* Inverts color */
-    transform: translateY(-3px);
-    border-color: var(--text-main);
-}
-
-.email-btn:hover .mail-icon {
-    animation: flyMail 0.8s ease forwards;
-}
-
-@keyframes flyMail {
-    0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 1; }
-    40% { transform: translate(30px, -30px) scale(0.5) rotate(15deg); opacity: 0; }
-    50% { transform: translate(-30px, 30px) scale(0.5) rotate(-15deg); opacity: 0; }
-    100% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 1; }
-}
-
-/* --- TEXT COLUMN STYLING --- */
-.about-text-column {
+/* --- TEXT COLUMN --- */
+.vintage-text-column {
     flex: 1;
 }
 
-.about-bio p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-main);
-    margin-bottom: 25px;
-    text-align: justify;
+.typewriter-header {
+    margin-bottom: 30px;
 }
 
-/* --- THE INVITATION CTA BOX --- */
-.memory-invitation-box {
-    background: linear-gradient(145deg, rgba(197, 160, 89, 0.05), rgba(197, 160, 89, 0.15));
-    border-left: 4px solid var(--accent-gold);
-    padding: 30px;
-    border-radius: 0 12px 12px 0;
-    margin: 40px 0;
+.typewriter-tag {
+    font-family: var(--font-typewriter);
+    font-size: 0.8rem;
+    color: var(--ink-faded);
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+    min-height: 1.2rem;
+}
+
+.vintage-main-title {
+    font-family: var(--font-stamp);
+    font-size: 3.5rem;
+    color: var(--ink-black);
+    margin: 0 0 5px 0;
+    line-height: 1.1;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+}
+
+.vintage-sub-title {
+    font-family: var(--font-typewriter);
+    font-size: 1.1rem;
+    color: var(--ribbon-red);
+    font-weight: normal;
+    margin: 0;
+    min-height: 1.5rem;
+}
+
+.typewriter-divider {
+    height: 2px;
+    background: var(--ink-black);
+    margin-top: 20px;
     position: relative;
 }
 
-.invitation-title {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    color: var(--accent-gold);
-    margin: 0 0 15px 0;
+.typewriter-divider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 30%;
+    height: 2px;
+    background: var(--paper-bg);
+    opacity: 0.4;
 }
 
-.memory-invitation-box p {
+/* Body Text */
+.vintage-bio p {
+    font-family: var(--font-typewriter);
     font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: 15px;
-    color: var(--text-main);
+    line-height: 1.8;
+    color: var(--ink-black);
+    margin-bottom: 25px;
+    text-align: justify;
+    min-height: 1.5rem;
 }
 
-.invitation-highlight {
-    font-weight: 700;
-    font-style: italic;
-    margin-bottom: 0 !important;
+.vintage-drop-cap {
+    font-family: var(--font-stamp);
+    font-size: 4.5rem;
+    float: left;
+    line-height: 0.8;
+    padding-right: 12px;
+    padding-top: 5px;
+    color: var(--ink-black);
 }
 
-/* --- PASSIONS (TAGS) SECTION --- */
-.skills-section {
-    margin-top: 50px;
-    padding-top: 35px;
-    border-top: 1px solid var(--glass-border);
+/* --- THE INVITATION BOX --- */
+.vintage-invitation-box {
+    border: 2px dashed var(--ink-faded);
+    padding: 25px 30px;
+    margin: 40px 0;
+    background: rgba(0,0,0,0.02);
 }
 
-.skills-title {
-    font-family: var(--font-ui);
+.vintage-invitation-title {
+    font-family: var(--font-typewriter);
     font-size: 1.2rem;
-    color: var(--accent-dark);
-    margin: 0 0 20px 0;
+    color: var(--ink-black);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 15px 0;
+    border-bottom: 1px solid var(--ink-faded);
+    display: inline-block;
+    padding-bottom: 5px;
+    min-height: 1.5rem;
 }
 
-.skills-grid {
+.vintage-invitation-box p {
+    font-family: var(--font-typewriter);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink-black);
+    margin-bottom: 15px;
+}
+
+.vintage-invitation-highlight {
+    font-weight: bold;
+    color: var(--ribbon-red) !important;
+}
+
+/* --- PASSIONS (TAGS) --- */
+.vintage-skills-section {
+    margin-top: 40px;
+}
+
+.vintage-skills-title {
+    font-family: var(--font-typewriter);
+    font-size: 1rem;
+    color: var(--ink-faded);
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-height: 1.5rem;
+}
+
+.vintage-skills-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
 }
 
-.skill-tag {
-    background: transparent;
-    color: var(--text-main);
-    border: 1px solid var(--accent-gold);
-    padding: 8px 18px;
-    border-radius: 30px;
-    font-family: var(--font-ui);
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
+.vintage-skill-tag {
+    font-family: var(--font-typewriter);
+    font-size: 0.85rem;
+    color: var(--ink-black);
+    border: 1px solid var(--ink-faded);
+    padding: 5px 10px;
+    text-transform: uppercase;
+    background-color: #fff;
+    box-shadow: 1px 1px 0px rgba(0,0,0,0.2);
 }
 
-.skill-tag:hover {
-    transform: translateY(-3px);
-    background: var(--accent-gold);
-    color: #1A202C; /* Dark text for readability on gold */
+/* =========================================
+   TYPEWRITER ANIMATIONS & CURSOR
+========================================= */
+.vintage-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.1em;
+    background-color: var(--ink-black);
+    vertical-align: text-bottom;
+    margin-left: 2px;
 }
 
-/* --- DARK MODE FIXES SPECIFIC TO ABOUT PAGE --- */
-.container.dark .memory-invitation-box {
-    background: linear-gradient(145deg, rgba(15, 20, 30, 0.8), rgba(26, 32, 44, 0.9));
+.vintage-cursor.idle {
+    animation: blinkCursor 1s step-end infinite;
+}
+
+.vintage-cursor.typing {
+    animation: none;
+    opacity: 1;
+}
+
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Universal Delayed Reveal Utility */
+.fade-in-element {
+    opacity: 0;
+    animation: paperReveal 1s ease-in forwards;
+}
+
+@keyframes paperReveal {
+    0% { 
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 850px) {
-    .about-wrapper {
+    .vintage-paper-wrapper {
         flex-direction: column;
         align-items: center;
+        padding: 40px 20px;
     }
     
-    .about-image-column {
+    .vintage-image-column {
         flex: auto;
         width: 100%;
-        max-width: 400px;
+        max-width: 300px;
     }
     
-    .about-text-column {
-        text-align: center;
-    }
-    
-    .about-bio p, .memory-invitation-box p {
+    .vintage-bio p {
         text-align: left; 
     }
     
-    .skills-grid {
-        justify-content: center;
+    .vintage-main-title {
+        font-size: 2.2rem;
     }
 }
-
