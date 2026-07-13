@@ -20,6 +20,7 @@ export default function HomeDashboard() {
       <div className="premium-article-header">
         <TypeAnimation
           sequence={[
+            'Next Article Tommorow at 10',2500,
             'Football News', 1000, 
             'World Cup Updates', 1000,
             'Match Analysis', 1000,
@@ -31,7 +32,7 @@ export default function HomeDashboard() {
           repeat={Infinity}
         />
       </div>
-
+          <h2 className="feed-section-heading">Top Trendings </h2>
       {/* ─── HERO FEATURE (Main Story) ─── */}
       <section className="hero-feature-wrapper">
         <div className="hero-feature-card">
