@@ -5,11 +5,11 @@ import {
 } from 'recharts';
 import './Qafinal.css';
 
-// ─── THE MATCH DATA & ARTICLES ───
+// ─── THE VERIFIED MATCH DATA & ARTICLES ───
 const matches = [
   {
     id: "fra-mar",
-    title: "1.France vs. Morocco: Tactical Dominance",
+    title: "1. France vs. Morocco: Tactical Dominance",
     team1: { name: "FRANCE", flag: "🇫🇷", rating: 88, color: "#00E5FF", winProb: "100%", goals: 2 },
     team2: { name: "MOROCCO", flag: "🇲🇦", rating: 78, color: "#FF4D4D", winProb: "0%", goals: 0 },
     stats: [
@@ -23,7 +23,7 @@ const matches = [
   },
   {
     id: "esp-bel",
-    title: "2.Spain vs. Belgium: A Dramatic Quarterfinal",
+    title: "2. Spain vs. Belgium: A Dramatic Quarterfinal",
     team1: { name: "SPAIN", flag: "🇪🇸", rating: 86, color: "#FFD700", winProb: "100%", goals: 2 },
     team2: { name: "BELGIUM", flag: "🇧🇪", rating: 84, color: "#FF0055", winProb: "0%", goals: 1 },
     stats: [
@@ -34,6 +34,34 @@ const matches = [
       { category: 'Tactics', SPAIN: 92, BELGIUM: 80, max: 100 },
     ],
     article: "Spain defeated Belgium 2-1 in a tightly contested quarterfinal, decided by substitute Mikel Merino’s late intervention. Spain took the lead in the 30th minute through a rebound finish from Fabián Ruiz. Belgium responded tactically by finding gaps in transition, leading to Charles De Ketelaere’s equalizer in the 41st minute with a header. The match remained deadlocked until the dying moments. Luis de la Fuente’s tactical substitution of Merino in the 86th minute proved decisive; just two minutes later, Merino pounced on a loose ball to secure the victory. Spain’s dominance in ball retention and clever utilization of their bench were key to overcoming a resilient Belgian side. This result sends Spain into a highly anticipated semifinal clash against France. Merino’s goal established a historical record, making him the first player in FIFA World Cup history to score winning goals as a substitute in two different knockout matches in a single tournament."
+  },
+  {
+    id: "eng-nor",
+    title: "3. England vs. Norway: A Dramatic Quarterfinal",
+    team1: { name: "ENGLAND", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", rating: 86, color: "#ffffff", winProb: "100%", goals: 2 },
+    team2: { name: "NORWAY", flag: "🇳🇴", rating: 84, color: "#FF0055", winProb: "0%", goals: 1 },
+    stats: [
+      { category: 'Attack', ENGLAND: 88, NORWAY: 84, max: 100 },
+      { category: 'Defense', ENGLAND: 82, NORWAY: 78, max: 100 },
+      { category: 'Possession', ENGLAND: 95, NORWAY: 75, max: 100 },
+      { category: 'Pace',  ENGLAND: 80, NORWAY: 88, max: 100 },
+      { category: 'Tactics',  ENGLAND: 92, NORWAY: 80, max: 100 },
+    ],
+    article: "In a tightly contested quarterfinal, England secured a dramatic 2-1 extra-time victory over Norway. Tactically, Norway proved to be a resilient and battling side, breaking the deadlock in the 36th minute with a spectacular strike from Andreas Schjelderup. However, England quickly responded just before half-time when Jude Bellingham equalized. The match was decided in extra time when substitute Morgan Rogers' long-range effort was parried by Norwegian goalkeeper Ørjan Nyland, allowing Bellingham to pounce on the rebound and score the winner in the 93rd minute. Statistically, Bellingham's standout performance was historic; his brace made him the first England midfielder to score six goals in a single World Cup edition. England's persistence and ability to transition effectively ultimately paid off, earning them a semifinal spot."
+  },
+  {
+    id: "arg-sui",
+    title: "4. Argentina vs. Switzerland: Reigning Champions Survive",
+    team1: { name: "ARGENTINA", flag: "🇦🇷", rating: 89, color: "#43A1D5", winProb: "100%", goals: 3 },
+    team2: { name: "SWITZERLAND", flag: "🇨🇭", rating: 81, color: "#FF0000", winProb: "0%", goals: 1 },
+    stats: [
+      { category: 'Attack', ARGENTINA: 92, SWITZERLAND: 76, max: 100 },
+      { category: 'Defense', ARGENTINA: 85, SWITZERLAND: 80, max: 100 },
+      { category: 'Possession', ARGENTINA: 88, SWITZERLAND: 68, max: 100 },
+      { category: 'Pace', ARGENTINA: 84, SWITZERLAND: 75, max: 100 },
+      { category: 'Tactics', ARGENTINA: 90, SWITZERLAND: 82, max: 100 },
+    ],
+    article: "Defending champions Argentina advanced to the semifinals with a hard-fought 3-1 extra-time win over Switzerland. Argentina controlled the early tempo, taking the lead in the 10th minute when Alexis Mac Allister converted a corner delivered by Lionel Messi. Switzerland tactically adjusted and found an equalizer in the 67th minute through Dan Ndoye. However, the match's dynamic shifted drastically when Switzerland's Breel Embolo was sent off after receiving a second yellow card for simulation following a VAR review, reducing them to 10 men. Argentina patiently utilized their numerical advantage in extra time, breaking the Swiss resistance with a brilliant long-range strike from Julián Alvarez in the 112th minute and a final goal by Lautaro Martínez in the 120th minute. Statistically, this victory extended Argentina’s impressive World Cup unbeaten streak to 12 matches, showcasing their ability to break down compact defenses."
   }
 ];
 
@@ -107,145 +135,7 @@ export default function QuarterFinalAnalysis() {
 
         </section>
       ))}
-      <section className="coming-soon-wrapper fade-in">
       
-      {/* ─── INJECTED CSS ─── */}
-      <style>
-        {`
-          .coming-soon-wrapper {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
-          }
-
-          .teaser-box {
-            position: relative;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(164, 255, 0, 0.03) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 50px 40px;
-            text-align: center;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-          }
-
-          .teaser-box:hover {
-            transform: translateY(-3px);
-            border-color: rgba(164, 255, 0, 0.2);
-          }
-
-          /* Subtle background glow */
-          .teaser-glow {
-            position: absolute;
-            top: -50%;
-            left: 50%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(164, 255, 0, 0.08) 0%, transparent 70%);
-            transform: translateX(-50%);
-            pointer-events: none;
-            z-index: 0;
-          }
-
-          /* Content Layer */
-          .teaser-content {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          }
-
-          /* Live Status Indicator */
-          .status-badge {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(164, 255, 0, 0.1);
-            color: #A4FF00;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-family: var(--font-ui, 'Inter', sans-serif);
-            font-size: 0.75rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-          }
-
-          .pulse-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #A4FF00;
-            border-radius: 50%;
-            position: relative;
-          }
-
-          .pulse-dot::after {
-            content: '';
-            position: absolute;
-            top: -4px;
-            left: -4px;
-            right: -4px;
-            bottom: -4px;
-            border-radius: 50%;
-            background-color: rgba(164, 255, 0, 0.5);
-            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-          }
-
-          @keyframes pulse-ring {
-            0% { transform: scale(0.8); opacity: 1; }
-            100% { transform: scale(2.5); opacity: 0; }
-          }
-
-          /* Typography */
-          .teaser-title {
-            font-family: var(--font-heading, 'Playfair Display', serif);
-            font-size: 2.5rem;
-            color: #ffffff;
-            margin: 0 0 15px 0;
-            line-height: 1.2;
-          }
-
-          .teaser-text {
-            font-family: var(--font-ui, 'Inter', sans-serif);
-            font-size: 1.1rem;
-            color: #A0AEC0;
-            max-width: 600px;
-            line-height: 1.7;
-            margin: 0;
-          }
-
-          /* Mobile Responsiveness */
-          @media (max-width: 768px) {
-            .teaser-box { padding: 40px 20px; }
-            .teaser-title { font-size: 2rem; }
-            .teaser-text { font-size: 1rem; }
-          }
-        `}
-      </style>
-
-      {/* ─── COMPONENT JSX ─── */}
-      <div className="teaser-box">
-        <div className="teaser-glow"></div>
-        <div className="teaser-content">
-          
-          <div className="status-badge">
-            <div className="pulse-dot"></div>
-            Currently Drafting
-          </div>
-          
-          <h2 className="teaser-title">The Other Two Matches</h2>
-          
-          <p className="teaser-text">
-            Comprehensive statistical analysis and tactical deep-dives for the remaining games are in the editing room. Stay tuned.
-          </p>
-
-        </div>
-      </div>
-      
-    </section>
     </div>
   );
 }
