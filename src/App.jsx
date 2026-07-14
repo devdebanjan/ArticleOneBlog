@@ -19,6 +19,7 @@ import Qafinal from './blog/QuarterFinal/Qafinal.jsx';
 import Ronaldo from './blog/Full_article/Ronaldo.jsx'
 
 import Reffari from './blog/Full_article/Reffari.jsx'
+import Semipri from './blog/Semifinalgames/Semifinal.jsx'
 
 import Footer from './components/footer/Footer.jsx'
 
@@ -48,6 +49,7 @@ const App = () => {
           <Route path='/QaFinals' element={<Qafinal className={`content ${theme}`} />}/>
           <Route path='/Ronaldo' element={<Ronaldo className={`content ${theme}`} />}/>
           <Route path='/Reffari' element={<Reffari className={`content ${theme}`} />}/>
+          <Route path='/Semipre' element={<Semipri  className={`content ${theme}`} />}/>
           {/* Menus */}
           <Route path='/About' element={<About className={`background ${theme}`}/>} />
           <Route path='/Articales' element={<Articales className={`background ${theme}`}/>} />
