@@ -37,6 +37,7 @@ const Navbar = ({ theme, setTheme }) => {
                     {/* Left Side: Navigation Links (Hidden on Mobile) */}
                     <ul className="nav-links desktop-only">
                         <li className="navitem"><Link to="/">Home</Link></li>
+                        <li className="navitem"><Link to="/Scores">Scoreboard</Link></li>
                         <li className="navitem"><Link to="/Articales">Articles</Link></li>
                         <li className="navitem"><Link to="/About">About</Link></li>
                     </ul>
@@ -85,6 +86,7 @@ const Navbar = ({ theme, setTheme }) => {
                 <ul className="sidebar-links">
                     {/* onClick triggers toggleMenu so the drawer closes when a link is clicked */}
                     <li onClick={toggleMenu}><Link to="/">Home</Link></li>
+                    <li onClick={toggleMenu}><Link to="/Scores">Scoreboard</Link></li>
                     <li onClick={toggleMenu}><Link to="/Articales">Articles</Link></li>
                     <li onClick={toggleMenu}><Link to="/About">About</Link></li>
                 </ul>

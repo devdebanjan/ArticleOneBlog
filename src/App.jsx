@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import Navbar from './components/navbar/Navbar.jsx';
 import ScrollTracker from './components/scrollbar/ScrollTracker.jsx'
 import FloatingFixtures from './components/fixture/FloatingFixtures.jsx';
+import LiveScore from './/components/Livescore/ScoreButton.jsx'
 import { Routes, Route } from 'react-router-dom'; 
+
+import { Analytics } from '@vercel/analytics/react';
 
 // --- PAGES & ARTICLES ---
 import Blog from './blog/Blog.jsx';              
 import T20Article from './blog/T20Article.jsx';  /* <--- YOU NEED TO ADD THIS EXACT LINE */
 import About from './routes/About.jsx';
 import Articales from './routes/Articales.jsx';
+import Scoreboard from './routes/Score.jsx';
 import Recap from './blog/StrategicReviewArticle.jsx'
 import Neymar from './blog/Journal.jsx'
 
@@ -53,9 +57,13 @@ const App = () => {
           {/* Menus */}
           <Route path='/About' element={<About className={`background ${theme}`}/>} />
           <Route path='/Articales' element={<Articales className={`background ${theme}`}/>} />
+          {/* <Route path='/Scores' element={<Scoreboard className={`background ${theme}`}/>} /> */}
+
       </Routes>
+      {/* <LiveScore/> */}
       <FloatingFixtures/>
       <ScrollTracker />
+      <Analytics />
       
       <Footer/>
     </div>
