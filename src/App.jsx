@@ -60,7 +60,7 @@ const App = () => {
           {/* <Route path='/Scores' element={<Scoreboard className={`background ${theme}`}/>} /> */}
 
       </Routes>
-      {/* <LiveScore/> */}
+      <LiveScore/>
       <FloatingFixtures/>
       <ScrollTracker />
       <Analytics />
