@@ -41,22 +41,7 @@ export default function FloatingFixtures() {
             <div className="bracket-scroll-container">
               
               {/* --- TOP HALF --- */}
-              <div className="bracket-section">
-                <div className="match-row qf-row">
-                  <MatchBox team1="FRA" flag1="🇫🇷" score1="2" team2="MAR" flag2="🇲🇦" score2="0" status="2 - 0" />
-                  <MatchBox team1="ESP" flag1="🇪🇸" score1="2" team2="BEL" flag2="🇧🇪" score2="1" status="2 - 1" />
-                </div>
-                
-                {/* Connecting Lines */}
-                <div className="connector-fork-down"></div>
-                <div className="connector-line-vertical"></div>
-
-                <div className="match-row sf-row">
-                  <MatchBox team1="FRA" flag1="🇫🇷" score1="0" team2="ESP" flag2="🇪🇸" score2="2" status="Jul 15" />
-                </div>
-                
-                <div className="connector-line-vertical"></div>
-              </div>
+             
 
               {/* --- FINALS ROW --- */}
               <div className="match-row finals-row">
@@ -64,7 +49,7 @@ export default function FloatingFixtures() {
                   <MatchBox team1="FRA" flag1="🇫🇷" score1="-" team2="ENG" flag2="🏴󠁧󠁢󠁥󠁮󠁧󠁿" score2="-" status="Jul 19" badge="BRONZE-FINAL" badgeColor="blue" />
                 </div>
                 <div className="finals-center">
-                  <MatchBox team1="ESP" flag1="🇪🇸" score1="-" team2="ARG" flag2="🇦🇷" score2="-" status="Jul 19" badge="FINAL" badgeColor="gold" />
+                  <MatchBox team1="ESP" flag1="🇪🇸" score1="-" team2="ARG" flag2="🇦🇷" score2="-" status="Jul 20" badge="FINAL" badgeColor="gold" />
                 </div>
                 <div className="finals-right trophy-section">
                   <div className="trophy-icon">🏆</div>
@@ -73,7 +58,7 @@ export default function FloatingFixtures() {
               </div>
 
               {/* --- BOTTOM HALF --- */}
-              <div className="bracket-section">
+              {/* <div className="bracket-section">
                 <div className="connector-line-vertical"></div>
                 
                 <div className="match-row sf-row">
@@ -87,7 +72,7 @@ export default function FloatingFixtures() {
                   <MatchBox team1="NOR" flag1="🇳🇴" score1="1" team2="ENG" flag2="🏴󠁧󠁢󠁥󠁮󠁧󠁿" score2="2" status="Today" />
                   <MatchBox team1="ARG" flag1="🇦🇷" score1="3" team2="SUI" flag2="🇨🇭" score2="1" status="Today" />
                 </div>
-              </div>
+              </div> */}
 
             </div>
           </div>

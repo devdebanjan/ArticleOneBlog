@@ -1,0 +1,304 @@
+/* Base Wrapper */
+.legacy-article-wrapper {
+  background-color: #050508;
+  min-height: 100vh;
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  color: #E2E8F0;
+  padding-bottom: 80px;
+}
+
+/* ─── IMMERSIVE HERO WITH VIDEO BACKGROUND ─── */
+.immersive-hero {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background-color: #000; /* Fallback */
+}
+
+/* Video background rules to span edge-to-edge behind text */
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none; /* Prevents users from right-clicking/pausing video */
+}
+
+/* The seamless dark fade gradient overlay */
+.hero-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom, 
+    rgba(5, 5, 8, 0.2) 0%, 
+    rgba(5, 5, 8, 0.6) 60%, 
+    #050508 100%
+  );
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  padding: 0 20px;
+  margin-top: 60px;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: rgba(164, 255, 0, 0.15);
+  color: #A4FF00;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+
+.hero-title {
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: 4.2rem;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+/* Thin layout divider line */
+.hero-divider {
+  width: 80%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 30px auto;
+}
+
+.hero-meta {
+  font-size: 0.9rem;
+  color: #E2E8F0;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.hero-meta strong {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+/* ─── EDITORIAL BODY ─── */
+.editorial-body {
+  max-width: 800px;
+  margin: 20px auto 0;
+  padding: 0 20px;
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: #CBD5E1;
+}
+
+.editorial-body p {
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.dropcap {
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: 5.5rem;
+  float: left;
+  line-height: 0.8;
+  padding-right: 18px;
+  padding-top: 12px;
+  background: linear-gradient(135deg, #A4FF00 0%, #00E5FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Highlight pull-quote */
+.highlight-block {
+  border-left: 4px solid #A4FF00;
+  background: linear-gradient(to right, rgba(164, 255, 0, 0.05), transparent);
+  padding: 25px 30px;
+  margin: 45px 0;
+  border-radius: 0 12px 12px 0;
+}
+
+.highlight-block  {
+  margin: 0 0 15px 0;
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: 1.45rem;
+  color: #f9f9f9;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.highlight-block-p{
+    color: #000;
+}
+
+/* ─── RATHA YATRA FLOATING WIDGET ─── */
+.ratha-yatra-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 320px; /* Positioned right above your other floating buttons */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 6px 6px 6px 18px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  background-color: #000000;
+}
+
+.ratha-yatra-fab:hover {
+  transform: translateY(-5px);
+  border-color: #85cc00;
+  box-shadow: 0 12px 40px rgba(164, 255, 0, 0.2);
+}
+
+.ratha-msg {
+  color: #ff0000;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.ratha-yatra-fab:hover .ratha-msg {
+  color: #A4FF00;
+}
+
+/* Spinning Animation for the Chakra */
+.spinning-chakra {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  animation: spinChakra 4s linear infinite;
+  object-fit: cover;
+}
+
+@keyframes spinChakra {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ─── MOBILE RESPONSIVENESS ─── */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.8rem; }
+  .immersive-hero { height: 60vh; }
+  .hero-divider { width: 90%; }
+  .hero-meta { font-size: 0.75rem; }
+  .editorial-body { font-size: 1.1rem; }
+  .highlight-block p { font-size: 1.25rem; }
+  
+  .stats-row { flex-direction: column; gap: 30px; }
+  .stats-row.primary-stats { padding-bottom: 0; border-bottom: none; }
+  .stat-block { border-right: none; padding: 0; margin-bottom: 25px; }
+  .stat-block:last-child { margin-bottom: 0; }
+  
+  .ratha-yatra-fab {
+    bottom: 150px;
+    padding: 4px 4px 4px 12px;
+  }
+  .ratha-msg { font-size: 0.8rem; }
+  .spinning-chakra { width: 36px; height: 36px; }
+}
+/* ─── RATHA YATRA VIDEO MODAL ─── */
+.ratha-video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000; /* Needs to be higher than your FAB */
+  animation: fadeIn 0.3s ease;
+}
+
+.ratha-video-content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  background: #0a0a0f;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #A4FF00;
+  box-shadow: 0 10px 50px rgba(164, 255, 0, 0.15);
+}
+
+.close-video-btn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-video-btn:hover {
+  color: #A4FF00;
+}
+
+.modal-video-player {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.modal-wish-text {
+  text-align: center;
+  color: #A4FF00;
+  margin: 15px 0 10px 0;
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: 1.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  /* ... your other mobile styles ... */
+  
+  .ratha-yatra-fab {
+    /* Increased from 150px to 230px to clear the existing buttons */
+    bottom: 330px; 
+    padding: 4px 8px 4px 12px;
+  }
+
+  .ratha-msg { 
+    font-size: 0.8rem; 
+  }
+  
+  .spinning-chakra { 
+    width: 32px; 
+    height: 32px; 
+  }
+}

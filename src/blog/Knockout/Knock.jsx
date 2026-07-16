@@ -13,6 +13,7 @@ import card from '../Knockout/media/card.jpeg';
 import Logo from '../../feature/media/author.jpeg';
 import logo2 from '../../feature/media/Profilepictute.jpeg';
 import Banner from '../Semifinalgames/media/banner.png';
+import Messi from '../Semifinalanalysis/media/banner.mp4'
 
 export default function HomeDashboard() {
   return (
@@ -38,6 +39,35 @@ export default function HomeDashboard() {
       <h2 className="feed-section-heading">Top Trending</h2>
       
       <div className="hero-grid-layout">
+        <section className="hero-feature-wrapper">
+          <div className="hero-feature-card">
+            <div className="hero-media-side">
+              <video 
+                src={Messi} autoPlay loop playsInline muted 
+                className="hero-video"
+              />
+              <div className="media-overlay"></div>
+            </div>
+            
+            <div className="hero-content-side">
+              <span className="tag">Leo in Final Again</span>
+              <h1 className="hero-title">Beyond the Paper: Tactical Discipline and Late Drama in the Semi Finals</h1>
+              
+              <div className="hero-meta">
+                <span className="author-name">Debanjan Acharjee</span>
+                <span className="publish-date">July 16, 2026 • 5 mins read</span>
+              </div>
+              
+              <p className="hero-excerpt">
+                <span className="cristiano-dropcap">P</span>redictions shattered as Spain and Argentina secured their place in the upcoming World Cup final. Spain delivered a complete tactical masterclass to dismantle a heavily favored France squad two to zero. Meanwhile, Argentina rallied with a late equalizer and a stunning stoppage time winner to break English hearts. Pure drama!..........
+              </p>
+              
+              <Link to="/Semianalysis" className="feature-cta-btn hero-btn">
+                Read Full Article <span>→</span>
+              </Link>
+            </div>
+          </div>
+        </section>
         {/* ─── HERO FEATURE 1 (Main Story) ─── */}
         <section className="hero-feature-wrapper">
           <div className="hero-feature-card">

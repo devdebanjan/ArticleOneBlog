@@ -24,6 +24,7 @@ import Ronaldo from './blog/Full_article/Ronaldo.jsx'
 
 import Reffari from './blog/Full_article/Reffari.jsx'
 import Semipri from './blog/Semifinalgames/Semifinal.jsx'
+import Semianalysis from './blog/Semifinalanalysis/Semianalysis.jsx';
 
 import Footer from './components/footer/Footer.jsx'
 
@@ -58,6 +59,7 @@ const App = () => {
           <Route path='/About' element={<About className={`background ${theme}`}/>} />
           <Route path='/Articales' element={<Articales className={`background ${theme}`}/>} />
           {/* <Route path='/Scores' element={<Scoreboard className={`background ${theme}`}/>} /> */}
+          <Route path='/Semianalysis' element={<Semianalysis className={`background ${theme}`}/>} />
 
       </Routes>
       <LiveScore/>
