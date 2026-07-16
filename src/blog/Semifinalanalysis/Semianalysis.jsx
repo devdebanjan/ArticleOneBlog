@@ -112,7 +112,7 @@ export default function Semianalysis() {
           className="ratha-yatra-fab" 
           onClick={() => setShowRathaVideo(true)}
         >
-          <span className="ratha-msg">Click here 👉🏻 Happy Ratha Yatra 2026 |🙏🏻 ⭕⊍⭕| </span>
+          <span className="ratha-msg">Click here👉🏻|🙏🏻 ⭕⊍⭕|</span>
           
           <img src={chakra} alt="Spinning Chakra" className="spinning-chakra" />
         </div>

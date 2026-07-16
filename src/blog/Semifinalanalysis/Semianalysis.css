@@ -290,7 +290,7 @@
   .ratha-yatra-fab {
     /* Increased from 150px to 230px to clear the existing buttons */
     bottom: 330px; 
-    padding: 4px 8px 4px 12px;
+    padding: 4px 2px 4px 5px;
   }
 
   .ratha-msg { 
