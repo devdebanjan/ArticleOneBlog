@@ -16,7 +16,7 @@ export default function Prediction() {
   const bootContenders = ['Lionel Messi', 'Kylian Mbappé', 'Harry Kane', 'Jude Bellingham'];
   const ballContenders = ['Kylian Mbappé', 'Lionel Messi', 'Lamine Yamal', 'Jude Bellingham']; 
   const gloveContenders = ['Unai Simón', 'Emiliano Martínez', 'Jordan Pickford', 'Mike Maignan'];
-  const ebooks = ['The Tactical Evolution of Soccer', 'World Cup Legends', 'Mastering the Mindset of a Champion'];
+  const ebooks = ['Soccernomics', 'World Cup Legends', 'Mastering the Mindset of a Champion'];
 
   const playerImages = {
     'Lionel Messi': 'https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/45843.png',
@@ -108,7 +108,7 @@ export default function Prediction() {
       
       {/* 1. Header & Profile Section */}
       <div className="glass-panel profile-panel">
-        <h1 className="neon-title">WORLD CUP PREDICTOR</h1>
+        <h1 className="neon-title">WORLD CUP PREDICTOR 100% GIFTS ASSURANCE </h1>
         <p className="subtitle">Lock your tactics to unlock exclusive digital rewards.</p>
         
         <div className="form-group grid-2 mt-4">
@@ -120,6 +120,38 @@ export default function Prediction() {
           </div>
         </div>
       </div>
+      
+
+      {/* ─── NEW: INSTRUCTION & REWARDS PANEL ─── */}
+     {/* ─── UPGRADED: PREMIUM RULES BAR ─── */}
+      <h1 className="neon-title">Playing Criteria</h1>
+      <div className="premium-rules-bar">
+        <div className="rule-segment">
+          <div className="rule-icon-pro target-icon">🎯</div>
+          <div className="rule-info">
+            <h4>How to Play</h4>
+            <p>You Have to choose one player from each the questions bellow 👇🏻</p>
+          </div>
+        </div>
+        
+        <div className="rule-segment">
+          <div className="rule-icon-pro scale-icon">⚖️</div>
+          <div className="rule-info">
+            <h4>The Criteria</h4>
+            <p>Score with high  accuracy in all 5 categories to win.</p>
+          </div>
+        </div>
+        
+        <div className="rule-segment">
+          <div className="rule-icon-pro gift-icon">🎁</div>
+          <div className="rule-info">
+            <h4>Digital Gifts</h4>
+            <p>Unlock 4K wallpapers, stickers & premium E-Books.</p>
+          </div>
+        </div>
+      </div>
+      {/* ─────────────────────────────────────── */}
+      {/* ─────────────────────────────────────── */}
 
       <form onSubmit={handleSubmit} className="tactics-board-form">
         
