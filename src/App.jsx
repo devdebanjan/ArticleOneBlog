@@ -25,11 +25,13 @@ import Ronaldo from './blog/Full_article/Ronaldo.jsx'
 import Reffari from './blog/Full_article/Reffari.jsx'
 import Semipri from './blog/Semifinalgames/Semifinal.jsx'
 import Semianalysis from './blog/Semifinalanalysis/Semianalysis.jsx';
+import Finalmatch from './blog/Finalmatch/Finalmatch.jsx'
 
 import Footer from './components/footer/Footer.jsx'
 
 import ScrollToTop from './components/ScrollToTop/ScrollToTop.jsx';
 
+import Predection from './blog/prediction/File.jsx';  /* <--- YOU NEED TO ADD THIS EXACT LINE */
 // ... rest of your App.jsx code stays the same
 
 const App = () => {
@@ -55,14 +57,18 @@ const App = () => {
           <Route path='/Ronaldo' element={<Ronaldo className={`content ${theme}`} />}/>
           <Route path='/Reffari' element={<Reffari className={`content ${theme}`} />}/>
           <Route path='/Semipre' element={<Semipri  className={`content ${theme}`} />}/>
+          <Route path='/Prediction' element={<Predection  className={`content ${theme}`} />}/>
+           <Route path='/Finalmatch' element={<Finalmatch  className={`content ${theme}`} />}/>
+          
           {/* Menus */}
           <Route path='/About' element={<About className={`background ${theme}`}/>} />
           <Route path='/Articales' element={<Articales className={`background ${theme}`}/>} />
           {/* <Route path='/Scores' element={<Scoreboard className={`background ${theme}`}/>} /> */}
           <Route path='/Semianalysis' element={<Semianalysis className={`background ${theme}`}/>} />
+          <Route path='/Prediction' element={<Predection className={`background ${theme}`}/>} />
 
       </Routes>
-      <LiveScore/>
+      {/* <LiveScore/> */}
       <FloatingFixtures/>
       <ScrollTracker />
       <Analytics />

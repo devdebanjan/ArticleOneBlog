@@ -15,6 +15,8 @@ import logo2 from '../../feature/media/Profilepictute.jpeg';
 import Banner from '../Semifinalgames/media/banner.png';
 import Messi from '../Semifinalanalysis/media/banner.mp4'
 
+import banner from '../Finalmatch/media/banner.jpeg';
+
 export default function HomeDashboard() {
   return (
     <div className="home-dashboard-container fade-in">
@@ -39,6 +41,36 @@ export default function HomeDashboard() {
       <h2 className="feed-section-heading">Top Trending</h2>
       
       <div className="hero-grid-layout">
+        <section className="hero-feature-wrapper">
+          <div className="hero-feature-card">
+            <div className="hero-media-side">
+              <img 
+                src={banner} 
+                alt="Semi Final Race"
+                className="hero-video"
+              />
+              <div className="media-overlay"></div>
+            </div>
+            
+            <div className="hero-content-side">
+              <span className="tag"> Final Again Spain and Argentina</span>
+              <h1 className="hero-title">Final Fight</h1>
+              
+              <div className="hero-meta">
+                <span className="author-name">Debanjan Acharjee</span>
+                <span className="publish-date">July 19, 2026 • 5 mins read</span>
+              </div>
+              
+              <p className="hero-excerpt">
+                <span className="cristiano-dropcap">P</span>The Final Showdown Against Spain: A Tactical Masterclass and a Heart-Stopping Finish. Spain's tactical brilliance dismantled France, while Argentina's late heroics against England set the stage for an epic final clash.
+              </p>
+              
+              <Link to="/Finalmatch" className="feature-cta-btn hero-btn">
+                Read Full Article <span>→</span>
+              </Link>
+            </div>
+          </div>
+        </section>
         <section className="hero-feature-wrapper">
           <div className="hero-feature-card">
             <div className="hero-media-side">
