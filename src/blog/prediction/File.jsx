@@ -113,7 +113,7 @@ export default function Prediction() {
         
         <div className="form-group grid-2 mt-4">
           <div className="input-wrapper">
-            <input type="text" name="name" value={formData.name} onChange={handleChange} required className="input-field" placeholder="Manager Name (Display Name)" />
+            <input type="text" name="name" value={formData.name} onChange={handleChange} required className="input-field" placeholder="Name(Your Name)" />
           </div>
           <div className="input-wrapper">
             <input type="email" name="email" value={formData.email} onChange={handleChange} required className="input-field" placeholder="Email (For Prize Delivery)" />
@@ -146,7 +146,7 @@ export default function Prediction() {
               
               {/* ZONE 1: Golden Boot (Top Penalty Area) */}
               <div className="tactic-row zone-attack">
-                <h3 className="zone-title">Golden Boot</h3>
+                <h3 className="zone-title">Golden Boot Winner?</h3>
                 <div className="token-group">
                   {bootContenders.map((p, i) => <TacticalToken key={p} label={p} name="goldenBoot" value={p} avatarUrl={getAvatar(p)} number={i+1} />)}
                 </div>
@@ -154,7 +154,7 @@ export default function Prediction() {
 
               {/* ZONE 2: Golden Ball (Upper Midfield) */}
               <div className="tactic-row zone-midfield">
-                <h3 className="zone-title">Golden Ball</h3>
+                <h3 className="zone-title">Golden Ball Winner?</h3>
                 <div className="token-group">
                   {ballContenders.map((p, i) => <TacticalToken key={p} label={p} name="goldenBall" value={p} avatarUrl={getAvatar(p)} number={i+1} />)}
                 </div>
@@ -162,7 +162,7 @@ export default function Prediction() {
 
               {/* ZONE 3: Who Will Win (Center Circle) */}
               <div className="tactic-row zone-center">
-                <h3 className="zone-title">Match Winner</h3>
+                <h3 className="zone-title">Match Winner?</h3>
                 <div className="token-group versus-group">
                   <TeamToken label="Argentina" name="worldCupWinner" value="Argentina" flagUrl="https://flagcdn.com/w160/ar.png" />
                   <span className="vs-badge">VS</span>
@@ -181,7 +181,7 @@ export default function Prediction() {
                 <div className="token-group">
                   {gloveContenders.map((p, i) => <TacticalToken key={p} label={p} name="goldenGlove" value={p} avatarUrl={getAvatar(p)} number={i+1} />)}
                 </div>
-                <h3 className="zone-title">Golden Gloves</h3>
+                <h3 className="zone-title">Golden Gloves Winner?</h3>
               </div>
 
             </div>
@@ -196,7 +196,7 @@ export default function Prediction() {
           
           <div className="grid-3 mb-4">
             <div className="form-group">
-              <label className="highlight-label">Wallpaper</label>
+              <label className="highlight-label">Premium Wallpaper</label>
               <select name="wallpaperGenre" value={formData.wallpaperGenre} onChange={handleChange} required className="input-field custom-select">
                 <option value="" disabled>Select Genre...</option>
                 <option value="Sports">Sports</option>
