@@ -1,597 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap');
-
-:root {
-  --grass-dark: #27702a;
-  --grass-light: #2e7d32;
-  --line-color: rgba(255, 255, 255, 0.7);
-  --accent-gold: #FFD700;
-  --text-main: #f8fafc;
-  --bg-input: #1a2436;
-}
-
-/* --- Environment Layout --- */
-.stadium-environment {
-  min-height: 100vh;
-  /* Dark stadium background */
-  background-color: #0b1121;
-  background-image: radial-gradient(circle at center, #1a2a44 0%, #05080f 100%);
-  color: var(--text-main);
-  font-family: 'Montserrat', sans-serif;
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-.glass-panel {
-  width: 100%;
-  max-width: 800px;
-  background: rgba(12, 18, 30, 0.6);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-}
-
-.profile-panel { text-align: center; }
-.neon-title { color: var(--accent-gold); font-weight: 900; margin: 0; font-size: 2.2rem; }
-.subtitle { color: #94a3b8; font-weight: 600; margin-top: 0.5rem; }
-
-/* Input Styles */
-.input-field {
-  width: 100%; padding: 1rem;
-  background: var(--bg-input);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px; color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600; outline: none;
-}
-.input-field:focus { border-color: var(--accent-gold); }
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-
-/* =========================================
-   THE TACTICAL PITCH (Based on Sketch)
-========================================= */
-.tactics-board-form {
-  width: 100%;
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.pitch-wrapper {
-  width: 100%;
-  background: #000;
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 40px rgba(255,255,255,0.05);
-}
-
-.pitch-field {
-  position: relative;
-  width: 100%;
-  /* Creates the rectangular pitch aspect ratio */
-  aspect-ratio: 3 / 4; 
-  min-height: 700px;
-  /* Striped grass background */
-  background: repeating-linear-gradient(
-    0deg,
-    var(--grass-dark),
-    var(--grass-dark) 10%,
-    var(--grass-light) 10%,
-    var(--grass-light) 20%
-  );
-  border: 3px solid var(--line-color);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-/* --- Pitch Markings (Lines) --- */
-.pitch-markings {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  pointer-events: none; /* Let clicks pass through to tokens */
-}
-
-.halfway-line {
-  position: absolute;
-  top: 50%; left: 0; width: 100%; height: 3px;
-  background: var(--line-color);
-  transform: translateY(-50%);
-}
-
-.center-circle {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 140px; height: 140px;
-  border: 3px solid var(--line-color);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-.center-circle::after {
-  content: ''; position: absolute;
-  top: 50%; left: 50%; width: 8px; height: 8px;
-  background: var(--line-color); border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.penalty-box {
-  position: absolute; left: 50%;
-  width: 50%; height: 18%;
-  border: 3px solid var(--line-color);
-  transform: translateX(-50%);
-}
-.penalty-box.top { top: 0; border-top: none; }
-.penalty-box.bottom { bottom: 0; border-bottom: none; }
-
-.goal-box {
-  position: absolute; left: 50%;
-  width: 40%; height: 40%;
-  border: 3px solid var(--line-color);
-  transform: translateX(-50%);
-}
-.goal-box.top { top: 0; border-top: none; }
-.goal-box.bottom { bottom: 0; border-bottom: none; }
-
-.penalty-arc {
-  position: absolute; left: 50%;
-  width: 80px; height: 40px;
-  border: 3px solid var(--line-color);
-  transform: translateX(-50%);
-}
-.penalty-arc.top { 
-  bottom: -40px; 
-  border-top: none; border-radius: 0 0 80px 80px; 
-}
-.penalty-arc.bottom { 
-  top: -40px; 
-  border-bottom: none; border-radius: 80px 80px 0 0; 
-}
-
-/* --- Tactical Zones Layout --- */
-.tactical-zones {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 2% 0;
-  z-index: 10;
-}
-
-.tactic-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.zone-title {
-  background: rgba(0,0,0,0.6);
-  padding: 4px 12px;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--accent-gold);
-  border: 1px solid rgba(255,215,0,0.3);
-  backdrop-filter: blur(4px);
-  margin: 0;
-}
-
-.token-group {
+/* Container for centering the whole block on the page */
+.prediction-container {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  width: 100%;
-}
-
-/* Specific Zone Spacing to match drawing */
-.zone-attack { margin-top: 2%; }
-.zone-midfield { margin-top: -2%; }
-.zone-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-.zone-defense { margin-bottom: 2%; }
-
-/* --- Tactical Tokens (The "Circles" from sketch) --- */
-.tactical-token, .team-token {
-  position: relative;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-.tactical-token input, .team-token input { display: none; }
-
-.tactical-token:hover, .team-token:hover { transform: translateY(-5px) scale(1.1); }
-
-.token-avatar-wrapper {
-  position: relative;
-  width: 55px; height: 55px;
-  border-radius: 50%;
-  border: 3px solid rgba(255,255,255,0.5);
-  background: #1e293b;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-  transition: all 0.3s;
+  padding: 20px;
+  min-height: 50vh; /* Allows the box to center vertically */
 }
 
-.token-avatar {
-  width: 100%; height: 100%;
-  border-radius: 50%; object-fit: cover;
-}
-
-.token-number {
-  position: absolute;
-  top: -5px; right: -5px;
-  width: 20px; height: 20px;
-  background: #fff; color: #000;
-  border-radius: 50%;
-  font-size: 0.75rem; font-weight: 900;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-}
-
-.token-label {
-  margin-top: 6px;
-  background: rgba(0,0,0,0.7);
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 700;
+/* The main content card */
+.prediction-content {
+  background: linear-gradient(135deg, #38ef7d 0%, #fff720 100%);
+  padding: 40px;
+  border-radius: 16px;
+  color: #111;
   text-align: center;
-  white-space: nowrap;
-}
-
-/* Active Glow State */
-.tactical-token.active .token-avatar-wrapper, 
-.team-token.active .team-flag-wrapper {
-  border-color: var(--accent-gold);
-  box-shadow: 0 0 20px var(--accent-gold);
-  transform: scale(1.15);
-}
-.tactical-token.active .token-label,
-.team-token.active .token-label {
-  color: var(--accent-gold);
-}
-
-/* Match Winner Center Row */
-.versus-group {
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 10px;
-}
-.vs-badge {
-  font-size: 1.2rem; font-weight: 900;
-  color: rgba(255,255,255,0.5);
-}
-.team-flag-wrapper {
-  width: 65px; height: 65px;
-  border-radius: 50%;
-  border: 3px solid rgba(255,255,255,0.5);
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-  transition: all 0.3s;
-}
-.team-flag-circle { width: 100%; height: 100%; object-fit: cover; }
-
-/* Goals Input in Center */
-.goals-input-wrapper {
-  background: rgba(0,0,0,0.8);
-  padding: 5px 15px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.2);
-  display: flex; flex-direction: column; align-items: center;
-}
-.goals-input-wrapper label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; }
-.goals-scoreboard {
-  background: transparent; border: none;
-  color: var(--accent-gold); font-size: 1.8rem; font-weight: 900;
-  width: 50px; text-align: center; outline: none;
-}
-
-/* --- Submission Area --- */
-.highlight-label { font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; display: block; }
-.submit-btn {
-  width: 100%; padding: 1.2rem; margin-top: 1.5rem;
-  background: linear-gradient(135deg, var(--accent-gold), #d97706);
-  color: #000; font-size: 1.2rem; font-weight: 900;
-  text-transform: uppercase; border: none; border-radius: 12px;
-  cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
-}
-.submit-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,215,0,0.3); }
-
-.alert-box { padding: 1rem; border-radius: 8px; margin-top: 1rem; font-weight: 700; text-align: center; }
-.alert-success { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid #16a34a; }
-.alert-error { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid #dc2626; }
-
-/* --- Mobile Fixes --- */
-@media (max-width: 768px) {
-  .pitch-field { min-height: 550px; aspect-ratio: auto; }
-  .token-avatar-wrapper { width: 45px; height: 45px; }
-  .team-flag-wrapper { width: 50px; height: 50px; }
-  .token-group { gap: 0.75rem; }
-  .token-label { font-size: 0.65rem; padding: 2px 5px; }
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  .center-circle { width: 100px; height: 100px; }
-  .versus-group { gap: 1rem; }
-}/* --- Tactical Zones Layout --- */
-.tactical-zones {
-  position: absolute;
-  top: 0; left: 0; 
-  width: 100%; height: 100%;
-  z-index: 10;
-  /* Removed flex layout so we can absolutely position each row exactly on the pitch */
-}
-
-.tactic-row {
-  position: absolute;
-  left: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  max-width: 450px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  /* Centers the row horizontally */
-  transform: translateX(-50%); 
+  gap: 15px;
 }
 
-.zone-title {
-  background: rgba(0,0,0,0.6);
-  padding: 4px 12px;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--accent-gold);
-  border: 1px solid rgba(255,215,0,0.3);
-  backdrop-filter: blur(4px);
+/* Heading style */
+.prediction-content h2 {
   margin: 0;
+  font-size: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 800;
+  color: #000;
 }
 
-.token-group {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  width: 100%;
+/* Paragraph text style */
+.prediction-content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  color: #333;
 }
 
-/* =========================================
-   Precise Zone Positioning
-========================================= */
-
-/* Top Penalty Box */
-.zone-attack { 
-  top: 3%; 
-}
-
-/* Upper Midfield (Safely above the center circle) */
-.zone-midfield { 
-  top: 25%; 
-}
-
-/* Exact Center Circle */
-.zone-center { 
-  top: 50%; 
-  /* Overrides the default transform to center horizontally AND vertically */
-  transform: translate(-50%, -50%); 
-  gap: 16px; /* A bit more breathing room for the VS flags and goals input */
-}
-
-/* Bottom Penalty Box */
-.zone-defense { 
-  bottom: 3%; 
-}
-
-/* =========================================
-   MOBILE RESPONSIVENESS FIXES
-========================================= */
-@media (max-width: 768px) {
-  /* 1. Fix Pitch Dimensions */
-  .pitch-field { 
-    /* Increased slightly to guarantee vertical breathing room */
-    min-height: 750px; 
-    aspect-ratio: auto; 
-  }
-
-  /* 2. Reposition the Tactical Zones for Mobile Heights */
-  .zone-attack { top: 2%; }
-  .zone-midfield { top: 20%; } /* Pulled further up to completely clear the center zone */
-  .zone-center { top: 50%; gap: 10px; } 
-  .zone-defense { bottom: 2%; }
-
-  /* 3. Shrink Player Tokens to fit 4 in a row */
-  .token-group { 
-    gap: 0.5rem; 
-    width: 100%;
-    padding: 0 5px; 
-  }
-  
-  .token-avatar-wrapper { 
-    width: 42px; 
-    height: 42px; 
-  }
-  
-  .token-number {
-    width: 16px; height: 16px;
-    font-size: 0.65rem;
-    top: -3px; right: -3px;
-  }
-  
-  .token-label { 
-    font-size: 0.65rem; 
-    padding: 2px 4px; 
-    max-width: 65px; 
-    overflow: hidden; 
-    text-overflow: ellipsis;
-  }
-
-  .zone-title {
-    font-size: 0.8rem;
-    padding: 3px 10px;
-    margin-bottom: 6px; 
-  }
-
-  /* 4. Shrink Center Match Winner & Goals Section */
-  .versus-group { 
-    gap: 1rem; 
-    margin-bottom: 8px;
-  }
-  
-  .team-flag-wrapper { 
-    width: 55px; 
-    height: 55px; 
-  }
-  
-  .vs-badge { 
-    font-size: 1rem; 
-  }
-  
-  .center-circle { 
-    width: 110px; 
-    height: 110px; 
-  }
-
-  .goals-input-wrapper {
-    padding: 4px 12px;
-  }
-  
-  .goals-scoreboard {
-    font-size: 1.5rem;
-    width: 45px;
-  }
-
-  /* 5. General Layout Fixes */
-  .grid-2, .grid-3 { 
-    grid-template-columns: 1fr; 
-  }
-  .glass-panel {
-    padding: 1.5rem 1rem;
-  }
-}
-
-/* =========================================
-   PREMIUM RULES BAR (UI/UX UPGRADE)
-========================================= */
-.premium-rules-bar {
-  display: flex;
-  width: 100%;
-  max-width: 800px;
-  /* Deep, rich glassmorphic gradient */
-  background: linear-gradient(145deg, rgba(16, 23, 38, 0.7), rgba(9, 14, 23, 0.9));
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  /* Crisp, subtle outer border */
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  /* Floating shadow with an inner highlight for 3D depth */
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin: 0 auto 2rem auto;
-  overflow: hidden;
-}
-
-.rule-segment {
-  flex: 1;
-  padding: 1.25rem 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
-  transition: background 0.3s ease;
-}
-
-.rule-segment:last-child {
-  border-right: none;
-}
-
-/* Subtle glow effect on hover */
-.rule-segment:hover {
-  background: rgba(255, 215, 0, 0.03);
-}
-
-/* Modern Icon Blocks */
-.rule-icon-pro {
-  font-size: 1.5rem;
-  min-width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.4);
-  position: relative;
-}
-
-/* Individual Glowing Accents for each icon */
-.target-icon { 
-  border: 1px solid rgba(239, 68, 68, 0.3); 
-  box-shadow: 0 0 15px rgba(239, 68, 68, 0.15), inset 0 2px 4px rgba(255,255,255,0.05); 
-}
-.scale-icon { 
-  border: 1px solid rgba(255, 215, 0, 0.3); 
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.15), inset 0 2px 4px rgba(255,255,255,0.05); 
-}
-.gift-icon { 
-  border: 1px solid rgba(16, 185, 129, 0.3); 
-  box-shadow: 0 0 15px rgba(16, 185, 129, 0.15), inset 0 2px 4px rgba(255,255,255,0.05); 
-}
-
-/* Typography Hierarchy */
-.rule-info h4 {
+/* Styled link/button */
+.visit-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 24px;
+  background-color: #111;
   color: #fff;
-  font-size: 0.85rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin: 0 0 4px 0;
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.rule-info p {
-  color: #94a3b8;
-  font-size: 0.75rem;
-  line-height: 1.4;
-  margin: 0;
-  font-weight: 500;
+.visit-btn:hover {
+  background-color: #333;
+  transform: translateY(-3px); /* Subtle lift effect on hover */
 }
 
-/* =========================================
-   MOBILE RESPONSIVENESS FIXES
-========================================= */
-@media (max-width: 768px) {
-  
-  /* --- Fix the Rules Bar Layout --- */
-  .premium-rules-bar {
-    flex-direction: column; /* This forces them to stack vertically */
-    border-radius: 14px;
-    margin-bottom: 1.5rem;
-    width: 100%; /* Ensures it doesn't overflow the screen */
+/* Responsive adjustments for mobile devices */
+@media (max-width: 480px) {
+  .prediction-content {
+    padding: 30px 20px;
   }
   
-  .rule-segment {
-    border-right: none; /* Removes the desktop vertical dividers */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Adds mobile horizontal dividers */
-    padding: 1.25rem 1rem;
-    gap: 1rem;
-    width: 100%; 
-    box-sizing: border-box; /* Prevents padding from breaking width */
-  }
-
-  .rule-segment:last-child {
-    border-bottom: none; /* Keeps the bottom clean */
+  .prediction-content h2 {
+    font-size: 20px;
   }
   
-  .rule-icon-pro {
-    min-width: 42px;
-    height: 42px;
-    font-size: 1.3rem;
-    border-radius: 10px;
-  }
-
-  /* Ensures the text uses the remaining space properly */
-  .rule-info {
-    flex: 1;
+  .prediction-content p {
+    font-size: 15px;
   }
 }

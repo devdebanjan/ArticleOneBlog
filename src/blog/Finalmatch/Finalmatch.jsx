@@ -206,18 +206,18 @@ export default function WorldCupSemiFinalReport() {
           <figcaption className="image-caption">Champion team championship ring $30,000 and $50,000</figcaption>
         </figure>
 
-        {/* ─── FLOATING BUTTON (Click manually if closed) ─── */}
-        <button onClick={togglePopup} className="floating-luck-btn" aria-label="Open Prediction Game">
+        ─── FLOATING BUTTON (Click manually if closed) ───
+        {/* <button onClick={togglePopup} className="floating-luck-btn" aria-label="Open Prediction Game">
           <img 
               src="https://imgs.search.brave.com/orQ5rzdh88Qs4kb_xrDMoOFzdA4QJpWMDfg6jeO7bfE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/YW5pbWF0aW9uLzIw/MjQvMDQvMjcvMTIv/MDYvMTItMDYtNTgt/MTU3XzUxMi5naWY.gif" 
               alt="Spinning Wheel" 
               className="spinner-gif" 
           />
           <span className="luck-text">Try your luck</span>
-        </button>
+        </button> */}
         
         {/* ─── TIMER-BASED RESPONSIVE MODAL POPUP ─── */}
-        {isPopupOpen && (
+        {/* {isPopupOpen && (
           <div className="prediction-overlay" onClick={togglePopup}>
             <div className="prediction-modal" onClick={(e) => e.stopPropagation()}>
               
@@ -234,7 +234,7 @@ export default function WorldCupSemiFinalReport() {
               </div>
             </div>
           </div>
-        )}
+        )} */}
 
       </article>
     </div>
