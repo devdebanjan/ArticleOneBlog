@@ -46,7 +46,7 @@ export default function FloatingFixtures() {
               {/* --- FINALS ROW --- */}
               <div className="match-row finals-row">
                 <div className="finals-left">
-                  <MatchBox team1="FRA" flag1="🇫🇷" score1="-" team2="ENG" flag2="🏴󠁧󠁢󠁥󠁮󠁧󠁿" score2="-" status="Jul 19" badge="BRONZE-FINAL" badgeColor="blue" />
+                  <MatchBox team1="FRA" flag1="🇫🇷" score1="4" team2="ENG" flag2="🏴󠁧󠁢󠁥󠁮󠁧󠁿" score2="6" status="Today" badge="BRONZE-FINAL" badgeColor="blue" />
                 </div>
                 <div className="finals-center">
                   <MatchBox team1="ESP" flag1="🇪🇸" score1="-" team2="ARG" flag2="🇦🇷" score2="-" status="Jul 20" badge="FINAL" badgeColor="gold" />

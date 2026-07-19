@@ -130,7 +130,7 @@ export default function Prediction() {
           <div className="rule-icon-pro target-icon">🎯</div>
           <div className="rule-info">
             <h4>How to Play</h4>
-            <p>You Have to choose one player from each the questions bellow 👇🏻</p>
+            <p>You have to Predoct all the fields, choose one player from each the questions bellow 👇🏻</p>
           </div>
         </div>
         
@@ -146,7 +146,7 @@ export default function Prediction() {
           <div className="rule-icon-pro gift-icon">🎁</div>
           <div className="rule-info">
             <h4>Digital Gifts</h4>
-            <p>Unlock 4K wallpapers, stickers & premium E-Books.</p>
+            <p>You Can  Unlock all three gifts like 4K wallpapers, stickers & premium E-Books.</p>
           </div>
         </div>
       </div>
@@ -203,7 +203,8 @@ export default function Prediction() {
                 
                 {/* Total Goals Mini-Input in Center */}
                 <div className="goals-input-wrapper">
-                  <label>Total Goals</label>
+                  <label>Total Goals On Final </label>
+                 
                   <input type="number" name="totalGoals" value={formData.totalGoals} onChange={handleChange} required className="goals-scoreboard" placeholder="0" min="0" max="15" />
                 </div>
               </div>
@@ -231,7 +232,7 @@ export default function Prediction() {
               <label className="highlight-label">Premium Wallpaper</label>
               <select name="wallpaperGenre" value={formData.wallpaperGenre} onChange={handleChange} required className="input-field custom-select">
                 <option value="" disabled>Select Genre...</option>
-                <option value="Sports">Sports</option>
+                <option value="Sports">FIFA/Sports</option>
                 <option value="Lofi">Lofi</option>
                 <option value="Nature">Nature</option>
               </select>
@@ -241,7 +242,7 @@ export default function Prediction() {
               <label className="highlight-label">Stickers</label>
               <select name="stickerGenre" value={formData.stickerGenre} onChange={handleChange} required className="input-field custom-select">
                 <option value="" disabled>Select Theme...</option>
-                <option value="Sports">Stadium</option>
+                <option value="Sports">Funny</option>
                 <option value="Lofi">Café</option>
                 <option value="Nature">Mountains</option>
               </select>
