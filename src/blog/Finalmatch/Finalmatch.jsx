@@ -198,7 +198,7 @@ export default function WorldCupSemiFinalReport() {
           <br/><br/>
           🏆 The ultimate symbol of football immortality is coming.
           <br/><br/>
-          💭 Which nation do you see raising both the Cup and the ring in 2026?
+          💭 Which nation do you see raising both the Cup and the ring in 2026? <a href="/Prediction">👉🏻 Predict here</a>
         </p>
 
         <figure className="inline-image-showcase">
