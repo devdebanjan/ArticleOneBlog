@@ -62,7 +62,7 @@ export default function HomeDashboard() {
               </div>
               
               <p className="hero-excerpt">
-                <span className="cristiano-dropcap">P</span>The Final Showdown Against Spain: A Tactical Masterclass and a Heart-Stopping Finish. Spain's tactical brilliance dismantled France, while Argentina's late heroics against England set the stage for an epic final clash.
+                <span className="cristiano-dropcap">T</span>he Final Showdown Against Spain: A Tactical Masterclass and a Heart-Stopping Finish. Spain's tactical brilliance dismantled France, while Argentina's late heroics against England set the stage for an epic final clash.
               </p>
               
               <Link to="/Finalmatch" className="feature-cta-btn hero-btn">
