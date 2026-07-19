@@ -25,7 +25,7 @@ export default function HomeDashboard() {
       <div className="premium-article-header">
         <TypeAnimation
           sequence={[
-            'Next Article 19th July at 10:00 AM', 2500,
+            // 'Next Article 19th July at 10:00 AM', 2500,
             'Football News', 1000, 
             'World Cup Updates', 1000,
             'Match Analysis', 1000,
