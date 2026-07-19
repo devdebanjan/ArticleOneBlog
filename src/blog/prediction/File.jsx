@@ -19,16 +19,16 @@ export default function Prediction() {
   const ebooks = ['Soccernomics', 'World Cup Legends', 'Mastering the Mindset of a Champion'];
 
   // Reliable ESPN headshot URLs
-  const playerImages = {
+   const playerImages = {
     'Lionel Messi': 'https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/45843.png',
-    'Kylian Mbappé': 'https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/229472.png',
-    'Harry Kane': 'https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/148866.png',
-    'Jude Bellingham': 'https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/285516.png',
-    'Lamine Yamal': 'https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/329598.png',
-    'Unai Simón': 'https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/217983.png',
-    'Emiliano Martínez': 'https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/148906.png',
-    'Jordan Pickford': 'https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/140028.png',
-    'Mike Maignan': 'https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/178550.png'
+    'Kylian Mbappé': 'https://imgs.search.brave.com/DB0Lm-79sDvPlXdTdcbcpL5Sb_Mz1ghoFzMFUezG0yI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjE1/NzU0NTc2MC9waG90/by9wYWRlcmJvcm4t/Z2VybWFueS1reWxp/YW4tbWJhcHBlLW9m/LWZyYW5jZS1wb3Nl/cy1mb3ItYS1wb3J0/cmFpdC1kdXJpbmct/dGhlLWZyYW5jZS1w/b3J0cmFpdC5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9TE9r/cmlnaHNxZFRGSHlr/c19mV0RQbGo1QXhP/RGVlREJ3NG1NRGRT/S3BWYz0',
+    'Harry Kane': 'https://imgs.search.brave.com/j9PQOzw7LyCCiBFykghDdrjW4dYeZmqF70tgzyZBt7M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjE1/NzI0NDE0Mi9waG90/by9ibGFua2VuaGFp/bi1nZXJtYW55LWhh/cnJ5LWthbmUtb2Yt/ZW5nbGFuZC1wb3Nl/cy1mb3ItYS1wb3J0/cmFpdC1kdXJpbmct/dGhlLWVuZ2xhbmQt/cG9ydHJhaXQuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPV9J/UzVDTjA2eVg0ZW9D/XzltdTNORDItRGFP/NWJEejlHekVOQnhY/c01temM9',
+    'Jude Bellingham': 'https://imgs.search.brave.com/EGbpwI82_8zDfXgvIr5BA0jMbGMt4C18uutlPhscQL0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjI4/MDc3Mzc2MS9waG90/by9wYWxtLWJlYWNo/LWZsb3JpZGEtanVk/ZS1iZWxsaW5naGFt/LW9mLWVuZ2xhbmQt/cG9zZXMtZm9yLWEt/cG9ydHJhaXQtZHVy/aW5nLXRoZS1vZmZp/Y2lhbC1maWZhLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1q/MFJhTXVSMnRpZDBR/Mm13bHZNaU5IVVBU/ZWhmQ3J0ZWlXWndD/dXEwSDk0PQ',
+    'Lamine Yamal': 'https://imgs.search.brave.com/ESX_nSmAdVg_lTXcy5zwTou0ojG8EBBaT2CHDgrjDys/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjI4/MTA2OTA4OS9waG90/by9jaGF0dGFub29n/YS10ZW5uZXNzZWUt/bGFtaW5lLXlhbWFs/LW9mLXNwYWluLXBv/c2VzLWZvci1hLXBv/cnRyYWl0LWR1cmlu/Zy10aGUtb2ZmaWNp/YWwtZmlmYS5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9U0RJ/eDJ0VHVnazFILWt6/R1BwZzAzaGlpZkN4/Y2k5b3VkYWNlc2M0/YWVfOD0',
+    'Unai Simón': 'https://imgs.search.brave.com/bMosgDbWvjnmcsIYQ-50mzC0pmB9-7WlMX6zYzDZ4Xc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjI4/MTA2OTA3Ni9waG90/by9jaGF0dGFub29n/YS10ZW5uZXNzZWUt/dW5haS1zaW1vbi1v/Zi1zcGFpbi1wb3Nl/cy1mb3ItYS1wb3J0/cmFpdC1kdXJpbmct/dGhlLW9mZmljaWFs/LWZpZmEtd29ybGQu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PU9Fa0ZCckpRYnEx/S2R3Ql9YM2ZjanBI/RU9BWW9NZTJYT2lC/U0E0Wm5ZdWc9',
+    'Emiliano Martínez': 'https://imgs.search.brave.com/YscE1yTV-1Hotqgll-KFU78y5RZsWpnHtFF195TutqQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjE0/OTIyMjU4MS9waG90/by9saWxsZS1mcmFu/Y2UtZW1pbGlhbm8t/bWFydGluZXotb2Yt/YXN0b24tdmlsbGEt/Z2VzdHVyZXMtdG93/YXJkcy10aGUtbGls/bGUtZmFucy1kdXJp/bmctdGhlLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz11eHJa/LUktdFJPaktCMmlU/N3MwdElxWjNDTExD/UjlxalJrNnpYR0Vq/TGNBPQ',
+    'Jordan Pickford': 'https://imgs.search.brave.com/hmQjODhzb5kNUhFPtGIvOI0AsFCe5i9QPa6IQPYskI4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTE1/NDQyMTI4OS9waG90/by9idXJ0b24tdXBv/bi10cmVudC1lbmds/YW5kLWpvcmRhbi1w/aWNrZm9yZC1vZi1l/bmdsYW5kLXBvc2Vz/LWZvci1hLXBvcnRy/YWl0LWF0LXN0LWdl/b3JnZXMtcGFyay5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/LXNHdEJJVXZfUXl4/eGZfMnFxcmRlYWpZ/VlVWeFdfcXVZT0pu/MS1NaVVkND0',
+    'Mike Maignan': 'https://imgs.search.brave.com/HUiEsf7ypETH1aWDwdZWaz5ARTLN1aQAsUtfxTbcRnk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjE1/NzU0NTQ4MS9mci9w/aG90by9wYWRlcmJv/cm4tZ2VybWFueS1t/aWtlLW1haWduYW4t/b2YtZnJhbmNlLXBv/c2VzLWZvci1hLXBv/cnRyYWl0LWR1cmlu/Zy10aGUtZnJhbmNl/LXBvcnRyYWl0Lmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1q/SEViMThTVEY4eFRK/NW1sZjhTTEdXRVNO/S3l1WkN4Uk10cDhB/M2pSZzJvPQ'
   };
 
   const getAvatar = (name) => {
