@@ -225,8 +225,8 @@ export default function WorldCupSemiFinalReport() {
               
               <div className="modal-body">
                 <span className="modal-icon">🎁</span>
-                <h2>Win Exclusive FIFA Gifts!</h2>
-                <p>Participate in the Ultimate 2026 Prediction Game. Guess the exact score of the Final to grab a chance to win limited-edition merchandise and replica rings!</p>
+                <h2>Win Exclusive  Gifts!</h2>
+                <p>Participate in the Ultimate FIFA FINAL  2026 Prediction Game. Guess the question field and grab a chance to win 3 exciting gifts</p>
                 
                 <div className="modal-actions">
                   <a href="/Prediction" className="predict-choice-btn play-theme">Play Now</a>
